@@ -1,7 +1,14 @@
-.grid {
+* {
+  box-sizing: border-box;
+}
+
+.grid-main {
   display: grid;
+  min-height: 90vh;
   grid-template-columns: 1.3fr 0.1fr 1.3fr 1.4fr;
-  grid-template-rows: 90vh;
+  grid-template-rows: minmax(20vw, 90vh);
+  -moz-column-gap: 0.725rem;
+       column-gap: 0.725rem;
 }
 
 .header {
@@ -32,28 +39,155 @@
   color: #A2A2A2;
 }
 
+.bottom-bar {
+  border-bottom: 1px solid #E6E6E6;
+  padding: 4% 0;
+}
+
+.hidden {
+  display: none;
+}
+
+.dress-info {
+  width: 100%;
+  max-width: 90%;
+}
+.dress-info .main-title {
+  margin-top: 10%;
+}
+.dress-info .link {
+  font-weight: bold;
+  text-decoration: none;
+  color: #000000;
+}
+.dress-info .price {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+.dress-info .link-container a {
+  margin: 7% 0;
+  display: block;
+}
+
+.size-and-color {
+  width: 100%;
+  padding-left: 10%;
+  max-width: 95%;
+}
+.size-and-color .color-text {
+  margin-top: 10%;
+  margin-bottom: 0;
+}
+.size-and-color .switch {
+  display: flex;
+  flex-direction: row;
+}
+.size-and-color .switch a {
+  padding: 3px;
+  margin-right: 20px;
+}
+.size-and-color .switch a div {
+  width: 25px;
+  height: 25px;
+}
+.size-and-color .switch a .black {
+  background-color: #000000;
+}
+.size-and-color .switch a .yellow {
+  background-color: yellow;
+}
+.size-and-color .switch a .red {
+  background-color: red;
+}
+.size-and-color .switch a:target {
+  border: 2px solid #000000;
+}
+.size-and-color .size-container {
+  display: flex;
+  max-width: 50%;
+  justify-content: space-between;
+}
+.size-and-color .size-container a {
+  text-decoration: none;
+  color: #000000;
+  padding: 0.1rem 0.75rem;
+}
+.size-and-color .size-container a:target {
+  border: 2px solid #000000;
+  font-weight: bold;
+}
+
 .small-img-container .small-img {
+  width: 100%;
   padding-top: 2px;
   padding-bottom: 9px;
 }
 
 .large-img-container {
-  overflow: scroll;
+  overflow-y: scroll;
+  min-width: 25VW;
 }
 .large-img-container .large-img {
-  width: 99%;
+  width: 100%;
 }
 
-.produc-cards {
+main {
+  padding: 0 25px;
+}
+
+.secondary-title {
+  padding-left: 1rem;
+}
+
+.product-cards-container {
   display: flex;
+  align-items: center;
+  overflow-x: auto;
+  margin: 0 auto;
+  padding: 1rem;
+}
+.product-cards-container figure {
+  margin: 0 auto;
+  padding: 0 0.25rem;
+}
+.product-cards-container figure img {
+  width: auto;
+  margin-bottom: 10px;
+}
+.product-cards-container figure figcaption {
+  margin: 10px 0;
+  font-weight: bold;
 }
 
+footer {
+  padding: 0;
+}
 footer .container {
   display: flex;
   justify-content: center;
 }
 footer .container div {
   padding: 2% 5%;
+}
+footer form {
+  display: flex;
+  justify-content: center;
+}
+footer form input {
+  flex-grow: 1;
+}
+footer form .footer-email {
+  padding: 0.25rem 1.5rem;
+}
+footer form .footer-btn {
+  border-radius: 0;
+  background-color: #000000;
+  color: #FFFFFF;
+  border: 0;
+}
+footer .footer-icon {
+  padding-top: 13%;
+  padding-right: 10%;
 }
 footer .copyright {
   color: #434343;

@@ -23,32 +23,32 @@
         
         <main>
             <!-- Informacion de vestido -->
-            <div class="grid">
+            <div class="grid-main">
                 <article class="dress-info">
                     <div class="breadcrumb"><a href="#">productos</a> > <a href="#">Vestidos</a> > <a href="#">Vestido estampado</a></div>
-                    <div>
-                        <h1>VESTIDO ESTAMPADO</h1>
+                    <h1 class="main-title">VESTIDO ESTAMPADO</h1>
+                    <div class="bottom-bar">
                         <p>Vestido de cuello solapa. Manga por debajo del codo acabada en puño.</p>
-                        <p>VER MÁS</p>
+                        <a href="#" class="link">VER MÁS</a>
                     </div>
-                    <div>
-                        <p>$8990,00</p>
+                    <div class="bottom-bar">
+                        <p class="price">$8990,00</p>
                         <p>3 cuotas sin interés de $1.133,00</p>
-                        <p>Ver medios de pago</p>
+                        <a href="#" class="link">Ver medios de pago</a>
                     </div>
-                    <div>
+                    <div class="bottom-bar">
                         <p>CALCULAR ENVÍO</p>
                         <form action="">
                             <input type="email" name="" id="">
                             <input type="button" value="CALCULAR">
                         </form>
                     </div>
-                    <div>
-                        <a href="#">COMPOSICIÓN Y TEXTIL</a>
-                        <a href="#">CUIDADOS DE LA PRENDA</a>
-                        <a href="#">CAMBIOS Y DEVOLUCIONES</a>
+                    <div class="link-container">
+                        <a href="#" class="link">COMPOSICIÓN Y TEXTIL</a>
+                        <a href="#" class="link">CUIDADOS DE LA PRENDA</a>
+                        <a href="#" class="link">CAMBIOS Y DEVOLUCIONES</a>
                     </div>
-                    <aside class="textil">
+                    <aside class="textil hidden">
                         <h3>COMPOSICIÓN Y TEXTIL</h3>
                         <p>
                             Trabajamos con nuestros proveedores, trabajadores, sindicatos y organismos 
@@ -61,10 +61,11 @@
                         <ul>
                             <li><img src="assets/textil/LAVAR A MANO-03.png" alt="Icono lavar a mano"><p>Lavar a mano max 30ºC</p></li>
                             <li><img src="assets/textil/NO RETORCER-03.png" alt="Icono no retorcer"><p>No usar lejía / blanqueador</p></li>
-                            <li><img src="assets/textil/ROCE-03.png" alt=""><p>No planchar</p></li>
-                            <li><img src="assets/textil/SOMBRA-03.png" alt=""><p>Lim.Seco tetracloroetileno</p></li>
-                            <li><img src="assets/textil/HUMEDA-03.png" alt=""><p>No usar secadora</p></li>
-                            <li><img src="assets/textil/LAVARROPA-03-1.png" alt=""><p>Lavar por separado</p></li>
+                            <li><img src="assets/textil/ROCE-03.png" alt="Icono de no planchar"><p>No planchar</p></li>
+                            <li><img src="assets/textil/SOMBRA-03.png" alt="Icono de sombra"><p>Lim.Seco tetracloroetileno</p></li>
+                            <li><img src="assets/textil/HUMEDA-03.png" alt="Icono de humedad"><p>No usar secadora</p></li>
+                            <li><img src="assets/textil/LAVARROPA-03-1.png" alt="Icono de lavarropa"><p>Lavar por separado</p></li>
+                            <li><img src="assets/textil/LAVARROPA-03-1.png" alt="Icono de lavarropa"><p>Secar en superficie plana</p></li>
                         </ul>
                     </aside>
                 </article>
@@ -89,23 +90,23 @@
 
                 <!-- Talle y color -->
                 <section class="size-and-color">
-                    <div>
-                        <p><b>Color: </b>NEGRO</p>
-                        <div>swatch negro</div>
-                        <div>swatch amarillo</div>
-                        <div>swatch rojo</div>
+                    <p class="color-text"><b>Color: </b>NEGRO</p>
+                    <div class="switch bottom-bar">
+                        <a href="#color1" id="color1"><div class="black"></div></a>
+                        <a href="#color2" id="color2"><div class="yellow"></div></a>
+                        <a href="#color3" id="color3"><div class="red"></div></a>
                     </div>
 
                     <div>
-                        <div>
-                            <h4>Talle</h4>
-                            <div>XS</div>
-                            <div>S</div>
-                            <div>M</div>
-                            <div>L</div>
-                            <div>XL</div>
-                            <p>¿CUÁL ES MI TALLE?</p>
+                        <h4>Talle</h4>
+                        <div class="size-container">
+                            <a href="#xs" id="xs"><div>XS</div></a>
+                            <a href="#s" id="s"><div>S</div></a>
+                            <a href="#m" id="m"><div>M</div></a>
+                            <a href="#l" id="l"><div>L</div></a>
+                            <a href="#xl" id="xl"><div>XL</div></a>
                         </div>
+                        <a href="#">¿CUÁL ES MI TALLE?</a>
                         <input type="button" value="AGREGAR AL CARRITO">
                         <figure>
                             <img src="assets/icon-fav.svg" alt="Icono de favorito">
@@ -118,7 +119,7 @@
                             <figcaption>Compartir</figcaption>
                         </figure>
                     </div>
-                    <aside>
+                    <aside class="hidden">
                         <h3>TABLA DE TALLES</h3>
                         <div>
                             <a href="#">XS</a>
@@ -140,8 +141,8 @@
             </div>
 
             <!-- Product cards -->
-            <aside class="produc-cards">
-                <h2>TAL VEZ TE INTERESE</h2>
+            <h2 class="secondary-title">TAL VEZ TE INTERESE</h2>
+            <aside class="product-cards-container">
                 <figure>
                     <img src="assets/product card/visor producto.png" alt="Vestido con flores">
                     <figcaption>VESTIDO FLORES</figcaption>
@@ -196,12 +197,12 @@
                 <div>
                     <h3>Newsleter</h3>
                     <p>Suscríbase al Newsletter y reciba todas las novedades</p>
-                    <form action="">
-                        <input type="email" name="" id="">
-                        <input type="button" value="SUSCRIBIRME">
+                    <form>
+                        <input class="footer-email" placeholder="email" type="email" name="" id="">
+                        <input class="footer-btn" type="button" value="SUSCRIBIRME">
                     </form>
-                    <img src="assets/Icon feather-facebook.svg" alt="Icono de facebook">
-                    <img src="assets/Icon ionic-logo-instagram.svg" alt="Icono de instagram">
+                    <a href="#"><img class="footer-icon" src="assets/Icon feather-facebook.svg" alt="Icono de facebook"></a>
+                    <a href="#"><img class="footer-icon" src="assets/Icon ionic-logo-instagram.svg" alt="Icono de instagram"></a>
                 </div>
             </div>
 
