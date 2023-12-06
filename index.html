@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,152 +8,191 @@
 
     <link rel="stylesheet" href="styles/style.css">
 </head>
+
 <body>
-    <div >
-        <header class="header">
-            <div class="menu-container">
-                <img class="menu" src="assets/drawer.svg" alt="Menu">
-            </div>
-            <p class="logo-text">LOGO</p>
-            <div class="icon-container">
-                <img class="icon" src="assets/icon-search.svg" alt="Icono de busqueda">
-                <img class="icon" src="assets/icon-fav.svg" alt="Icono de favorito">
-                <img class="icon" src="assets/icon-shoppingbag.svg" alt="Icono de carrito">
-                <img class="icon" src="assets/icon-user.svg" alt="Icono de usuario">
-                <p class="icon">ES&#8964;</p>
-            </div>
-        </header>
-        
-        <main>
+    <header class="header">
+        <div class="menu-container">
+            <img class="menu" src="assets/drawer.svg" alt="Menu">
+        </div>
+        <p class="logo-text">LOGO</p>
+        <div class="icon-container">
+            <img class="icon" src="assets/icon-search.svg" alt="Icono de busqueda">
+            <img class="icon" src="assets/icon-fav.svg" alt="Icono de favorito">
+            <img class="icon" src="assets/icon-shoppingbag.svg" alt="Icono de carrito">
+            <img class="icon" src="assets/icon-user.svg" alt="Icono de usuario">
+            <p class="icon">ES&#8964;</p>
+        </div>
+    </header>
+
+    <main>
+        <div class="grid-main">
             <!-- Informacion de vestido -->
-            <div class="grid-main">
-                <article class="dress-info">
-                    <div class="breadcrumb"><a href="#">productos</a> > <a href="#">Vestidos</a> > <a href="#">Vestido estampado</a></div>
-                    <div class="title-and-inf-box">
-                        <h1 class="main-title">VESTIDO ESTAMPADO</h1>
-                        <div class="bottom-bar">
-                            <p>Vestido de cuello solapa. Manga por debajo del codo acabada en puño.</p>
-                            <a href="#" class="link">VER MÁS</a>
-                        </div>
-                    </div>
-                    <div class="bottom-bar price-and-payment-box">
-                        <p class="price">$8990,00</p>
-                        <p>3 cuotas sin interés de $1.133,00</p>
-                        <a href="#" class="link">Ver medios de pago</a>
-                    </div>
-                    <div class="bottom-bar calc-shipment-box">
-                        <p>CALCULAR ENVÍO</p>
-                        <form class="calc-shipment-container">
-                            <input class="calc-shipment-number" placeholder="Código postal" type="nimber">
-                            <input class="calc-shipment-btn btn" type="submit" value="CALCULAR">
-                        </form>
-                    </div>
-                    <div class="link-container">
-                        <a href="#" class="link">COMPOSICIÓN Y TEXTIL</a>
-                        <a href="#" class="link">CUIDADOS DE LA PRENDA</a>
-                        <a href="#" class="link">CAMBIOS Y DEVOLUCIONES</a>
-                    </div>
-                    <aside class="textil hidden">
-                        <h3>COMPOSICIÓN Y TEXTIL</h3>
-                        <p>
-                            Trabajamos con nuestros proveedores, trabajadores, sindicatos y organismos 
-                            internacionales para desarrollar una cadena de suministro en la que se respetan 
-                            y promueven los derechos humanos, contribuyendo a los Objetivos de Desarrollo 
-                            Sostenible de Naciones Unidas. Además, gracias a la colaboración continua con 
-                            nuestros proveedores, hemos desarrollado un programa de trazabilidad que nos 
-                            permite saber dónde y cómo se confeccionan nuestras prendas.
-                        </p>
-                        <ul>
-                            <li><img src="assets/textil/LAVAR A MANO-03.png" alt="Icono lavar a mano"><p>Lavar a mano max 30ºC</p></li>
-                            <li><img src="assets/textil/NO RETORCER-03.png" alt="Icono no retorcer"><p>No usar lejía / blanqueador</p></li>
-                            <li><img src="assets/textil/ROCE-03.png" alt="Icono de no planchar"><p>No planchar</p></li>
-                            <li><img src="assets/textil/SOMBRA-03.png" alt="Icono de sombra"><p>Lim.Seco tetracloroetileno</p></li>
-                            <li><img src="assets/textil/HUMEDA-03.png" alt="Icono de humedad"><p>No usar secadora</p></li>
-                            <li><img src="assets/textil/LAVARROPA-03-1.png" alt="Icono de lavarropa"><p>Lavar por separado</p></li>
-                            <li><img src="assets/textil/LAVARROPA-03-1.png" alt="Icono de lavarropa"><p>Secar en superficie plana</p></li>
-                        </ul>
-                    </aside>
-                </article>
-
-                <!-- Imagenes en miniatura -->
-                <section class="small-img-container">
-                    <img class="small-img" src="assets/product page/miniatura foto producto 1.png" alt="Modelo usando el vestido">
-                    <img class="small-img" src="assets/product page/miniatura foto producto 2.png" alt="Foto del vestido 1">
-                    <img class="small-img" src="assets/product page/miniatura foto producto 3.png" alt="Foto del vestido 2">
-                    <img class="small-img" src="assets/product page/miniatura foto producto 4.png" alt="Foto agrandada de la manga del vestido">
-                    <img class="small-img" src="assets/product page/miniatura foto producto 5.png" alt="Foto agrandada del cuello de vestido">
-                </section>
-
-                <!-- Imagenes grandes -->
-                <section class="large-img-container">
-                    <img class="large-img" src="assets/product page/miniatura foto producto 1.png" alt="Modelo usando el vestido">
-                    <img class="large-img" src="assets/product page/miniatura foto producto 2.png" alt="Foto del vestido 1">
-                    <img class="large-img" src="assets/product page/miniatura foto producto 3.png" alt="Foto del vestido 2">
-                    <img class="large-img" src="assets/product page/miniatura foto producto 4.png" alt="Foto agrandada de la manga del vestido">
-                    <img class="large-img" src="assets/product page/miniatura foto producto 5.png" alt="Foto agrandada del cuello de vestido">
-                </section>
-
-                <!-- Talle y color -->
-                <section class="size-and-color">
-                    <div class="color-box">
-                        <p class="color-text"><b>Color: </b>NEGRO</p>
-                        <div class="switch bottom-bar">
-                            <a href="#color1" id="color1"><div class="black"></div></a>
-                            <a href="#color2" id="color2"><div class="yellow"></div></a>
-                            <a href="#color3" id="color3"><div class="red"></div></a>
-                        </div>
-                    </div>
-
-                    <div>
-                        <div class="size-box">
-                            <h4>Talle</h4>
-                            <div class="size-container">
-                                <a href="#xs" id="xs"><div>XS</div></a>
-                                <a href="#s" id="s"><div>S</div></a>
-                                <a href="#m" id="m"><div>M</div></a>
-                                <a href="#l" id="l"><div>L</div></a>
-                                <a href="#xl" id="xl"><div>XL</div></a>
-                            </div>
-                        </div>
-                        <a class="link" href="#">¿CUÁL ES MI TALLE?</a>
-                        <div class="add-to-cart-container">
-                            <input class="btn add-to-cart-btn" type="button" value="AGREGAR AL CARRITO">
-                        </div>
-                        <div class="share-and-fav-container">
-                            <figure class="fav">
-                                <a href="#"><img class="icon" src="assets/icon-fav.svg" alt="Icono de favorito"></a>
-                                <figcaption>Agregar a favoritos</figcaption>
-                            </figure>
-                            <figure class="share">
-                                <figcaption>Compartir</figcaption>
-                                <a href="#"><img class="icon" src="assets/Icon feather-facebook.svg" alt="Icono de facebook"></a>
-                                <a href="#"><img class="icon" src="assets/Icon feather-facebook.svg" alt="Icono de tweeter"></a>
-                                <a href="#"><img class="icon" src="assets/Icon ionic-logo-instagram.svg" alt="Icono de instagram"></a>
-                            </figure>
-                        </div>
-                    </div>
-                    <aside class="hidden">
-                        <h3>TABLA DE TALLES</h3>
-                        <div>
-                            <a href="#">XS</a>
-                            <a href="#">S</a>
-                            <a href="#">M</a>
-                            <a href="#">L</a>
-                            <a href="#">XL</a>
-                        </div>
-                        <img src="assets/esquema talle.png" alt="Medidas del vestido">
-                        <div>
-                            <a href="#">VESTIDOS</a>
-                            <a href="#">REMERAS</a>
-                            <a href="#">PANTALON</a>
-                            <a href="#">FALDAS</a>
-                        </div>
-                        
-                    </aside>
-                </section>
+            <div class="mar-sides-10 breadcrumb"><a href="#">productos</a> > <a href="#">Vestidos</a> > <a href="#">Vestido
+                    estampado</a>
+            </div>
+            <div class="mar-sides-10 title-and-inf-box bottom-bar">
+                <h1 class="main-title">VESTIDO ESTAMPADO</h1>
+                <div>
+                    <p>Vestido de cuello solapa. Manga por debajo del codo acabada en puño.</p>
+                    <a href="#" class="link">VER MÁS</a>
+                </div>
             </div>
 
-            <!-- Product cards -->
+            <div class="mar-sides-10 bottom-bar price-and-payment-box">
+                <p class="price">$8990,00</p>
+                <p>3 cuotas sin interés de $1.133,00</p>
+                <a href="#" class="link">Ver medios de pago</a>
+            </div>
+            <div class="mar-sides-10 bottom-bar calc-shipment-box">
+                <p>CALCULAR ENVÍO</p>
+                <form class="calc-shipment-container">
+                    <input class="calc-shipment-number" placeholder="Código postal" type="nimber">
+                    <input class="calc-shipment-btn btn" type="submit" value="CALCULAR">
+                </form>
+            </div>
+            <div class="mar-sides-10 link-box">
+                <a href="#" class="link">COMPOSICIÓN Y TEXTIL</a>
+                <a href="#" class="link">CUIDADOS DE LA PRENDA</a>
+                <a href="#" class="link">CAMBIOS Y DEVOLUCIONES</a>
+            </div>
+            <aside class="textil hidden">
+                <h2>COMPOSICIÓN Y TEXTIL</h2>
+                <p>
+                    Trabajamos con nuestros proveedores, trabajadores, sindicatos y organismos
+                    internacionales para desarrollar una cadena de suministro en la que se respetan
+                    y promueven los derechos humanos, contribuyendo a los Objetivos de Desarrollo
+                    Sostenible de Naciones Unidas. Además, gracias a la colaboración continua con
+                    nuestros proveedores, hemos desarrollado un programa de trazabilidad que nos
+                    permite saber dónde y cómo se confeccionan nuestras prendas.
+                </p>
+                <ul>
+                    <li><img src="assets/textil/LAVAR A MANO-03.png" alt="Icono lavar a mano">
+                        <p>Lavar a mano max 30ºC</p>
+                    </li>
+                    <li><img src="assets/textil/NO RETORCER-03.png" alt="Icono no retorcer">
+                        <p>No usar lejía / blanqueador</p>
+                    </li>
+                    <li><img src="assets/textil/ROCE-03.png" alt="Icono de no planchar">
+                        <p>No planchar</p>
+                    </li>
+                    <li><img src="assets/textil/SOMBRA-03.png" alt="Icono de sombra">
+                        <p>Lim.Seco tetracloroetileno</p>
+                    </li>
+                    <li><img src="assets/textil/HUMEDA-03.png" alt="Icono de humedad">
+                        <p>No usar secadora</p>
+                    </li>
+                    <li><img src="assets/textil/LAVARROPA-03-1.png" alt="Icono de lavarropa">
+                        <p>Lavar por separado</p>
+                    </li>
+                    <li><img src="assets/textil/LAVARROPA-03-1.png" alt="Icono de lavarropa">
+                        <p>Secar en superficie plana</p>
+                    </li>
+                </ul>
+            </aside>
+
+
+            <!-- Imagenes en miniatura -->
+            <section class="small-img-box">
+                <img class="small-img" src="assets/product page/miniatura foto producto 1.png"
+                    alt="Modelo usando el vestido">
+                <img class="small-img" src="assets/product page/miniatura foto producto 2.png" alt="Foto del vestido 1">
+                <img class="small-img" src="assets/product page/miniatura foto producto 3.png" alt="Foto del vestido 2">
+                <img class="small-img" src="assets/product page/miniatura foto producto 4.png"
+                    alt="Foto agrandada de la manga del vestido">
+                <img class="small-img" src="assets/product page/miniatura foto producto 5.png"
+                    alt="Foto agrandada del cuello de vestido">
+            </section>
+
+            <!-- Imagenes grandes -->
+            <section class="large-img-box">
+                <img class="large-img" src="assets/product page/miniatura foto producto 1.png"
+                    alt="Modelo usando el vestido">
+                <img class="large-img" src="assets/product page/miniatura foto producto 2.png" alt="Foto del vestido 1">
+                <img class="large-img" src="assets/product page/miniatura foto producto 3.png" alt="Foto del vestido 2">
+                <img class="large-img" src="assets/product page/miniatura foto producto 4.png"
+                    alt="Foto agrandada de la manga del vestido">
+                <img class="large-img" src="assets/product page/miniatura foto producto 5.png"
+                    alt="Foto agrandada del cuello de vestido">
+            </section>
+
+            <!-- Talle y color -->
+            <section class="mar-sides-10 color-box bottom-bar">
+                <p class="color-text"><b>Color: </b>NEGRO</p>
+                <div class="switch ">
+                    <a href="#color1" id="color1">
+                        <div class="black"></div>
+                    </a>
+                    <a href="#color2" id="color2">
+                        <div class="yellow"></div>
+                    </a>
+                    <a href="#color3" id="color3">
+                        <div class="red"></div>
+                    </a>
+                </div>
+            </section>
+
+
+            <section class="mar-sides-10 size-box">
+                <h2>Talle</h2>
+                <div class="size-container">
+                    <a href="#xs" id="xs">
+                        <div>XS</div>
+                    </a>
+                    <a href="#s" id="s">
+                        <div>S</div>
+                    </a>
+                    <a href="#m" id="m">
+                        <div>M</div>
+                    </a>
+                    <a href="#l" id="l">
+                        <div>L</div>
+                    </a>
+                    <a href="#xl" id="xl">
+                        <div>XL</div>
+                    </a>
+                </div>
+                <a class="link" href="#">¿CUÁL ES MI TALLE?</a>
+            </section>
+
+            <div class="mar-sides-10 add-to-cart-box">
+                <input class="btn add-to-cart-btn" type="button" value="AGREGAR AL CARRITO">
+            </div>
+
+            <div class="mar-sides-10 share-and-fav-box">
+                <figure class="fav">
+                    <a href="#"><img class="icon" src="assets/icon-fav.svg" alt="Icono de favorito"></a>
+                    <figcaption>Agregar a favoritos</figcaption>
+                </figure>
+                <figure class="share">
+                    <figcaption>Compartir</figcaption>
+                    <a href="#"><img class="icon" src="assets/Icon feather-facebook.svg" alt="Icono de facebook"></a>
+                    <a href="#"><img class="icon" src="assets/Icon feather-facebook.svg" alt="Icono de tweeter"></a>
+                    <a href="#"><img class="icon" src="assets/Icon ionic-logo-instagram.svg" alt="Icono de instagram"></a>
+                </figure>
+            </div>
+
+            <aside class="hidden">
+                <h2>TABLA DE TALLES</h2>
+                <div>
+                    <a href="#">XS</a>
+                    <a href="#">S</a>
+                    <a href="#">M</a>
+                    <a href="#">L</a>
+                    <a href="#">XL</a>
+                </div>
+                <img src="assets/esquema talle.png" alt="Medidas del vestido">
+                <div>
+                    <a href="#">VESTIDOS</a>
+                    <a href="#">REMERAS</a>
+                    <a href="#">PANTALON</a>
+                    <a href="#">FALDAS</a>
+                </div>
+
+            </aside>
+        </div>
+
+        <!-- Product cards -->
+        <aside class="aside-cards-container">
             <h2 class="secondary-title">TAL VEZ TE INTERESE</h2>
             <aside class="product-cards-container">
                 <figure>
@@ -176,50 +216,55 @@
                     <figcaption>8990,00</figcaption>
                 </figure>
             </aside>
-        </main>
+        </aside>
+    </main>
 
-        <footer>
-            <div class="container">
+
+
+    <footer>
+        <div class="container">
+            <div>
                 <div>
-                    <div>
-                        <h3>Contacto</h3>
-                        <p>011-0000-0000</p>
-                        <p>Atención de Lunes a Viernes de 9 a 18 hs</p>
-                    </div>
-                    <div>
-                        <h3>Contacto</h3>
-                        <p>info@ejemplo.com</p>
-                        <p>Contáctenos</p>
-                    </div>
-                    <div>
-                        <h3>Preguntas frecuentes</h3>
-                        <p>Preguntas frecuentes</p>
-                        <p>Cambios y devoluciones</p>
-                    </div>
+                    <h2>Contacto</h2>
+                    <p>011-0000-0000</p>
+                    <p>Atención de Lunes a Viernes de 9 a 18 hs</p>
                 </div>
-
                 <div>
-                    <h3>Informacíon</h3>
-                    <p>Acerca de Ejemplo</p>
-                    <p>Información de envío</p>
-                    <p>Términos y Condiciones & Política de Devolución</p>
-                    <p>Mapa del Sitio</p>
+                    <h2>Contacto</h2>
+                    <p>info@ejemplo.com</p>
+                    <p>Contáctenos</p>
                 </div>
-
                 <div>
-                    <h3>Newsleter</h3>
-                    <p>Suscríbase al Newsletter y reciba todas las novedades</p>
-                    <form>
-                        <input class="footer-email" placeholder="email" type="email">
-                        <input class="footer-btn btn" type="submit" value="SUSCRIBIRME">
-                    </form>
-                    <a href="#"><img class="footer-icon" src="assets/Icon feather-facebook.svg" alt="Icono de facebook"></a>
-                    <a href="#"><img class="footer-icon" src="assets/Icon ionic-logo-instagram.svg" alt="Icono de instagram"></a>
+                    <h2>Preguntas frecuentes</h2>
+                    <p>Preguntas frecuentes</p>
+                    <p>Cambios y devoluciones</p>
                 </div>
             </div>
 
-            <p class="copyright">©️ 2021 EJEMPLO. TODOS LOS DERECHOS RESERVADOS. DESIGNED & EVELOPED BY INNOVATE GROUP | SHOPIFY EXPERTS</p>
-        </footer>
-    </div>
+            <div>
+                <h2>Informacíon</h2>
+                <p>Acerca de Ejemplo</p>
+                <p>Información de envío</p>
+                <p>Términos y Condiciones & Política de Devolución</p>
+                <p>Mapa del Sitio</p>
+            </div>
+
+            <div>
+                <h2>Newsleter</h2>
+                <p>Suscríbase al Newsletter y reciba todas las novedades</p>
+                <form>
+                    <input class="footer-email" placeholder="email" type="email">
+                    <input class="footer-btn btn" type="submit" value="SUSCRIBIRME">
+                </form>
+                <a href="#"><img class="footer-icon" src="assets/Icon feather-facebook.svg" alt="Icono de facebook"></a>
+                <a href="#"><img class="footer-icon" src="assets/Icon ionic-logo-instagram.svg"
+                        alt="Icono de instagram"></a>
+            </div>
+        </div>
+
+        <p class="copyright">©️ 2021 EJEMPLO. TODOS LOS DERECHOS RESERVADOS. DESIGNED & EVELOPED BY INNOVATE GROUP |
+            SHOPIFY EXPERTS</p>
+    </footer>
 </body>
+
 </html>
