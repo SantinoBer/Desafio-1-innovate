@@ -38,9 +38,9 @@
                     </div>
                     <div class="bottom-bar">
                         <p>CALCULAR ENVÍO</p>
-                        <form action="">
-                            <input type="email" name="" id="">
-                            <input type="button" value="CALCULAR">
+                        <form class="calc-shipment-container">
+                            <input class="calc-shipment-number" placeholder="Código postal" type="nimber">
+                            <input class="calc-shipment-btn btn" type="submit" value="CALCULAR">
                         </form>
                     </div>
                     <div class="link-container">
@@ -106,18 +106,22 @@
                             <a href="#l" id="l"><div>L</div></a>
                             <a href="#xl" id="xl"><div>XL</div></a>
                         </div>
-                        <a href="#">¿CUÁL ES MI TALLE?</a>
-                        <input type="button" value="AGREGAR AL CARRITO">
-                        <figure>
-                            <img src="assets/icon-fav.svg" alt="Icono de favorito">
-                            <figcaption>Agregar a favoritos</figcaption>
-                        </figure>
-                        <figure>
-                            <img src="assets/Icon feather-facebook.svg" alt="Icono de facebook">
-                            <img src="assets/Icon feather-facebook.svg" alt="Icono de tweeter">
-                            <img src="assets/Icon ionic-logo-instagram.svg" alt="Icono de instagram">
-                            <figcaption>Compartir</figcaption>
-                        </figure>
+                        <a class="link" href="#">¿CUÁL ES MI TALLE?</a>
+                        <div class="add-to-cart-container">
+                            <input class="btn add-to-cart-btn" type="button" value="AGREGAR AL CARRITO">
+                        </div>
+                        <div class="share-and-fav-container">
+                            <figure class="fav">
+                                <a href="#"><img class="icon" src="assets/icon-fav.svg" alt="Icono de favorito"></a>
+                                <figcaption>Agregar a favoritos</figcaption>
+                            </figure>
+                            <figure class="share">
+                                <figcaption>Compartir</figcaption>
+                                <a href="#"><img class="icon" src="assets/Icon feather-facebook.svg" alt="Icono de facebook"></a>
+                                <a href="#"><img class="icon" src="assets/Icon feather-facebook.svg" alt="Icono de tweeter"></a>
+                                <a href="#"><img class="icon" src="assets/Icon ionic-logo-instagram.svg" alt="Icono de instagram"></a>
+                            </figure>
+                        </div>
                     </div>
                     <aside class="hidden">
                         <h3>TABLA DE TALLES</h3>
@@ -198,8 +202,8 @@
                     <h3>Newsleter</h3>
                     <p>Suscríbase al Newsletter y reciba todas las novedades</p>
                     <form>
-                        <input class="footer-email" placeholder="email" type="email" name="" id="">
-                        <input class="footer-btn" type="button" value="SUSCRIBIRME">
+                        <input class="footer-email" placeholder="email" type="email">
+                        <input class="footer-btn btn" type="submit" value="SUSCRIBIRME">
                     </form>
                     <a href="#"><img class="footer-icon" src="assets/Icon feather-facebook.svg" alt="Icono de facebook"></a>
                     <a href="#"><img class="footer-icon" src="assets/Icon ionic-logo-instagram.svg" alt="Icono de instagram"></a>
