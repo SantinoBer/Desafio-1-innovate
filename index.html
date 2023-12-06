@@ -10,9 +10,11 @@
 <body>
     <div >
         <header class="header">
-            <img class="menu" src="assets/drawer.svg" alt="Menu">
+            <div class="menu-container">
+                <img class="menu" src="assets/drawer.svg" alt="Menu">
+            </div>
             <p class="logo-text">LOGO</p>
-            <div>
+            <div class="icon-container">
                 <img class="icon" src="assets/icon-search.svg" alt="Icono de busqueda">
                 <img class="icon" src="assets/icon-fav.svg" alt="Icono de favorito">
                 <img class="icon" src="assets/icon-shoppingbag.svg" alt="Icono de carrito">
@@ -26,17 +28,19 @@
             <div class="grid-main">
                 <article class="dress-info">
                     <div class="breadcrumb"><a href="#">productos</a> > <a href="#">Vestidos</a> > <a href="#">Vestido estampado</a></div>
-                    <h1 class="main-title">VESTIDO ESTAMPADO</h1>
-                    <div class="bottom-bar">
-                        <p>Vestido de cuello solapa. Manga por debajo del codo acabada en puño.</p>
-                        <a href="#" class="link">VER MÁS</a>
+                    <div class="title-and-inf-box">
+                        <h1 class="main-title">VESTIDO ESTAMPADO</h1>
+                        <div class="bottom-bar">
+                            <p>Vestido de cuello solapa. Manga por debajo del codo acabada en puño.</p>
+                            <a href="#" class="link">VER MÁS</a>
+                        </div>
                     </div>
-                    <div class="bottom-bar">
+                    <div class="bottom-bar price-and-payment-box">
                         <p class="price">$8990,00</p>
                         <p>3 cuotas sin interés de $1.133,00</p>
                         <a href="#" class="link">Ver medios de pago</a>
                     </div>
-                    <div class="bottom-bar">
+                    <div class="bottom-bar calc-shipment-box">
                         <p>CALCULAR ENVÍO</p>
                         <form class="calc-shipment-container">
                             <input class="calc-shipment-number" placeholder="Código postal" type="nimber">
@@ -90,21 +94,25 @@
 
                 <!-- Talle y color -->
                 <section class="size-and-color">
-                    <p class="color-text"><b>Color: </b>NEGRO</p>
-                    <div class="switch bottom-bar">
-                        <a href="#color1" id="color1"><div class="black"></div></a>
-                        <a href="#color2" id="color2"><div class="yellow"></div></a>
-                        <a href="#color3" id="color3"><div class="red"></div></a>
+                    <div class="color-box">
+                        <p class="color-text"><b>Color: </b>NEGRO</p>
+                        <div class="switch bottom-bar">
+                            <a href="#color1" id="color1"><div class="black"></div></a>
+                            <a href="#color2" id="color2"><div class="yellow"></div></a>
+                            <a href="#color3" id="color3"><div class="red"></div></a>
+                        </div>
                     </div>
 
                     <div>
-                        <h4>Talle</h4>
-                        <div class="size-container">
-                            <a href="#xs" id="xs"><div>XS</div></a>
-                            <a href="#s" id="s"><div>S</div></a>
-                            <a href="#m" id="m"><div>M</div></a>
-                            <a href="#l" id="l"><div>L</div></a>
-                            <a href="#xl" id="xl"><div>XL</div></a>
+                        <div class="size-box">
+                            <h4>Talle</h4>
+                            <div class="size-container">
+                                <a href="#xs" id="xs"><div>XS</div></a>
+                                <a href="#s" id="s"><div>S</div></a>
+                                <a href="#m" id="m"><div>M</div></a>
+                                <a href="#l" id="l"><div>L</div></a>
+                                <a href="#xl" id="xl"><div>XL</div></a>
+                            </div>
                         </div>
                         <a class="link" href="#">¿CUÁL ES MI TALLE?</a>
                         <div class="add-to-cart-container">

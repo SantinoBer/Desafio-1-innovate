@@ -18,12 +18,14 @@ $white:#FFFFFF;
     background-color: $black;
     color: $white;
     border: 0;
+    white-space: normal;
 }
 
 .grid-main {
     display: grid;
     grid-template-columns: 1.3fr 0.1fr 1.3fr 1.4fr;
     column-gap: 0.725rem;
+    
 }
 
 .header {
@@ -31,21 +33,22 @@ $white:#FFFFFF;
     justify-content: space-between;
     border: 1px solid $light-gray;
     padding: 10px 2%;
-
+    text-align: center;
+    .menu-container{
+        display: flex;
+        width: 20%;
+        justify-content: start;
+        align-items: center;
+    }
     .logo-text{
         font-size: 40px;
         margin: 0;
     }
-
-    div {
+    .icon-container {
         display: flex;
         align-items: center;
-        .icon{
-            justify-content: space-around;
-            &:not(:last-child){
-                padding-right:  20px;
-            }
-        }
+        width: 20%;
+        justify-content: space-evenly;
     }
 }
 
@@ -256,10 +259,12 @@ footer{
 
     form{
         display: flex;
+        width: 100%;
         input {
-            flex-grow: 1;
+            flex: 1;
         }
         .footer-email{
+            width: 65%;
             padding: 0.25rem 1.5rem;
         }
     }
@@ -274,5 +279,49 @@ footer{
         color: $medium-gray;
         font-size: 0.725rem;
         text-align: center;
+    }
+}
+
+@media only screen and  (max-width: 900px){
+    .header{
+        border: 0;
+        .icon:nth-last-child(2),
+        .icon:last-child {
+            display: none;
+        }
+    }
+
+    .breadcrumb{
+        display: none;
+    }
+
+    .grid-main{
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(7,1fr);
+        .dress-info{
+            display: grid;
+            .title-and-inf-box{
+                grid-row: 2;
+            }
+        }
+        .large-img-container{
+            grid-row: 1;
+        }
+        .small-img-container{
+            display: none;
+        }
+
+        .color-box{
+            grid-row: 3;
+        }
+        .size-box{
+            grid-row: 4;
+        }
+    }
+
+    footer{
+        .container{
+            flex-direction: column;
+        }
     }
 }

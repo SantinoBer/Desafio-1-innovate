@@ -10,6 +10,7 @@
   background-color: #000000;
   color: #FFFFFF;
   border: 0;
+  white-space: normal;
 }
 
 .grid-main {
@@ -24,20 +25,23 @@
   justify-content: space-between;
   border: 1px solid #707070;
   padding: 10px 2%;
+  text-align: center;
+}
+.header .menu-container {
+  display: flex;
+  width: 20%;
+  justify-content: start;
+  align-items: center;
 }
 .header .logo-text {
   font-size: 40px;
   margin: 0;
 }
-.header div {
+.header .icon-container {
   display: flex;
   align-items: center;
-}
-.header div .icon {
-  justify-content: space-around;
-}
-.header div .icon:not(:last-child) {
-  padding-right: 20px;
+  width: 20%;
+  justify-content: space-evenly;
 }
 
 .breadcrumb {
@@ -240,11 +244,13 @@ footer .container div {
 }
 footer form {
   display: flex;
+  width: 100%;
 }
 footer form input {
-  flex-grow: 1;
+  flex: 1;
 }
 footer form .footer-email {
+  width: 65%;
   padding: 0.25rem 1.5rem;
 }
 footer .footer-icon {
@@ -255,4 +261,42 @@ footer .copyright {
   color: #434343;
   font-size: 0.725rem;
   text-align: center;
+}
+
+@media only screen and (max-width: 900px) {
+  .header {
+    border: 0;
+  }
+  .header .icon:nth-last-child(2),
+  .header .icon:last-child {
+    display: none;
+  }
+  .breadcrumb {
+    display: none;
+  }
+  .grid-main {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(7, 1fr);
+  }
+  .grid-main .dress-info {
+    display: grid;
+  }
+  .grid-main .dress-info .title-and-inf-box {
+    grid-row: 2;
+  }
+  .grid-main .large-img-container {
+    grid-row: 1;
+  }
+  .grid-main .small-img-container {
+    display: none;
+  }
+  .grid-main .color-box {
+    grid-row: 3;
+  }
+  .grid-main .size-box {
+    grid-row: 4;
+  }
+  footer .container {
+    flex-direction: column;
+  }
 }/*# sourceMappingURL=style.css.map */
