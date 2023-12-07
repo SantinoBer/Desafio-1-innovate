@@ -10,9 +10,14 @@ html {
 
 body {
   overflow-x: hidden;
+  max-width: 3000px;
+  margin: 0 auto;
 }
 
-p, a, input, div {
+p,
+a,
+input,
+div {
   font-size: 1.4rem;
 }
 
@@ -24,13 +29,13 @@ p, a, input, div {
   cursor: pointer;
   border-radius: 0;
   background-color: #000000;
-  color: #FFFFFF;
+  color: #ffffff;
   border: 0;
   white-space: normal;
 }
 
 .bottom-bar {
-  border-bottom: 1px solid #E6E6E6;
+  border-bottom: 1px solid #e6e6e6;
   padding-top: 2%;
   padding-bottom: 2%;
 }
@@ -43,18 +48,6 @@ p, a, input, div {
   font-weight: bold;
   text-decoration: none;
   color: #000000;
-}
-
-.grid-main {
-  display: grid;
-  height: 85vh;
-  grid-template-columns: 1.3fr 0.1fr 1.4fr 1.4fr;
-  grid-template-rows: minmax(10px, 30px) repeat(4, 1fr);
-  -moz-column-gap: 1rem;
-       column-gap: 1rem;
-  row-gap: 1rem;
-  place-content: start center;
-  grid-template-areas: "bread s-img l-img empty" "title s-img l-img color" "price s-img l-img size" "ship  s-img l-img add" "links s-img l-img share-fav";
 }
 
 .header {
@@ -70,6 +63,9 @@ p, a, input, div {
   justify-content: start;
   align-items: center;
 }
+.header .menu {
+  padding-left: 10%;
+}
 .header .logo-text {
   font-size: 40px;
   margin: 0;
@@ -81,12 +77,29 @@ p, a, input, div {
   justify-content: space-evenly;
 }
 
+.grid-main {
+  display: grid;
+  height: 85vh;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  grid-template-columns: 1.3fr 0.1fr 1.4fr 1.4fr;
+  grid-template-rows: minmax(10px, 30px) repeat(3, 0.4fr) 1fr;
+  -moz-column-gap: 1rem;
+       column-gap: 1rem;
+  row-gap: 1rem;
+  place-content: start center;
+  grid-template-areas: "bread s-img l-img empty" "title s-img l-img color" "price s-img l-img size" "ship  s-img l-img add" "links s-img l-img share-fav";
+}
+
 .breadcrumb {
   grid-area: bread;
-  font-size: 0.75rem;
+  font-size: 1.5rem;
+  margin-right: 0;
 }
 .breadcrumb, .breadcrumb a {
-  color: #A2A2A2;
+  text-decoration: none;
+  font-size: 1.2rem;
+  color: #a2a2a2;
 }
 
 .title-and-inf-box {
@@ -100,7 +113,7 @@ p, a, input, div {
   grid-area: price;
 }
 .price-and-payment-box .price {
-  font-size: 1.5rem;
+  font-size: 2rem;
   font-weight: bold;
 }
 
@@ -150,8 +163,10 @@ p, a, input, div {
   align-items: center;
   overflow-y: auto;
   height: 48vw;
+  max-height: 85vh;
 }
 .large-img-box .large-img {
+  height: 48vw;
   width: 100%;
 }
 
@@ -175,10 +190,10 @@ p, a, input, div {
   background-color: #000000;
 }
 .color-box .switch a .yellow {
-  background-color: #9D7800;
+  background-color: #9d7800;
 }
 .color-box .switch a .red {
-  background-color: #A10000;
+  background-color: #a10000;
 }
 .color-box .switch a:target {
   border: 2px solid #000000;
@@ -242,6 +257,12 @@ p, a, input, div {
   justify-content: space-evenly;
 }
 
+.aside-cards-container {
+  max-width: 3000px;
+}
+.aside-cards-container .secondary-title {
+  margin-left: 5%;
+}
 .aside-cards-container .product-cards-container {
   display: flex;
   align-items: center;
@@ -254,7 +275,7 @@ p, a, input, div {
   padding: 0 0.25rem;
 }
 .aside-cards-container .product-cards-container figure img {
-  height: 50vw;
+  height: 48vw;
   max-height: 700px;
   width: auto;
   margin-bottom: 10px;
@@ -262,6 +283,10 @@ p, a, input, div {
 .aside-cards-container .product-cards-container figure figcaption {
   margin: 10px 0;
   font-weight: bold;
+}
+.aside-cards-container .product-cards-container figure:hover {
+  cursor: pointer;
+  filter: brightness(150%);
 }
 
 .grid-footer {
@@ -313,11 +338,18 @@ p, a, input, div {
 }
 
 @media only screen and (max-width: 900px) {
-  p, a, input, div {
+  p,
+  a,
+  input,
+  div {
     font-size: 1.2rem;
   }
-  .main-title {
-    font-size: 2.5rem;
+  .breadcrumb,
+  .small-img-box,
+  .add-to-cart-box,
+  .share-and-fav-box,
+  .contact-box-2 {
+    display: none;
   }
   .header {
     border: 0;
@@ -337,25 +369,23 @@ p, a, input, div {
     grid-template-areas: "l-img" "title" "color" "size" "price" "ship" "links";
     place-content: start center;
   }
-  .grid-main .large-img-box {
-    height: 70vh;
+  .main-title {
+    font-size: 2.5rem;
   }
-  .grid-main .large-img-box .large-img {
+  .large-img-box {
+    height: 130vw;
+    max-height: 85vh;
+  }
+  .large-img-box .large-img {
     height: auto;
-    max-width: 700px;
-  }
-  .breadcrumb,
-  .small-img-box,
-  .add-to-cart-box,
-  .share-and-fav-box,
-  .contact-box-2 {
-    display: none;
+    max-height: 100vh;
+    max-width: 87vw;
   }
   .color-box {
     height: 100%;
   }
   .size-box {
-    border-bottom: 1px solid #E6E6E6;
+    border-bottom: 1px solid #e6e6e6;
     padding-top: 2%;
     padding-bottom: 4%;
   }
@@ -382,7 +412,7 @@ p, a, input, div {
   .grid-footer .information-box,
   .grid-footer .frequent-questions-box,
   .grid-footer .social-media-box {
-    border-bottom: 1px solid #E6E6E6;
+    border-bottom: 1px solid #e6e6e6;
     padding-top: 2%;
     padding-bottom: 2%;
   }
