@@ -436,6 +436,38 @@ div {
   .link-box a {
     margin: 1% 0;
   }
+  .textil {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    margin: 0;
+    opacity: 0;
+    transition: 0.5s opacity;
+  }
+  .textil h3 {
+    font-weight: 2rem;
+    margin: 10% 0;
+  }
+  .textil .text-content {
+    margin: 0 5%;
+  }
+  .textil ul {
+    padding: 0;
+  }
+  .textil ul li {
+    margin: 5%;
+  }
+  .textil ul li p {
+    font-size: 1.5rem;
+  }
+  .textil .close {
+    top: 2%;
+    right: 3%;
+  }
+  .textil:target {
+    opacity: 1;
+    z-index: 1;
+  }
   .grid-footer {
     margin: 0 auto;
     gap: 0;
