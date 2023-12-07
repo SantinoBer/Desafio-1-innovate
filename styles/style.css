@@ -147,6 +147,50 @@ div {
   display: block;
 }
 
+.textil {
+  grid-column: 1;
+  grid-row: 2/6;
+  position: relative;
+  background-color: #ffffff;
+  opacity: 1;
+  transform: translate(-200%);
+  transition: 1s transform;
+}
+.textil h3 {
+  text-align: center;
+  margin-bottom: 7%;
+}
+.textil .text-content {
+  margin: 5% 0;
+}
+.textil ul {
+  list-style: none;
+  padding: 0;
+}
+.textil ul li {
+  display: flex;
+  align-items: center;
+}
+.textil ul li p {
+  font-weight: bold;
+}
+.textil ul li .icon {
+  max-height: 30px;
+  margin-right: 5%;
+}
+.textil .close {
+  position: absolute;
+  top: 1.5%;
+  right: 1%;
+  font-size: 2rem;
+  text-decoration: none;
+  color: #000000;
+}
+.textil:target {
+  transform: translate(0);
+  z-index: 1;
+}
+
 .small-img-box {
   grid-area: s-img;
 }
