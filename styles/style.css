@@ -266,7 +266,7 @@ footer .container {
   display: flex;
   justify-content: center;
 }
-footer .container div {
+footer .container .div-container {
   padding: 2% 5%;
 }
 footer form {
@@ -291,17 +291,60 @@ footer .copyright {
 }
 
 @media only screen and (max-width: 900px) {
+  p, a, input, div {
+    font-size: 1.2rem;
+  }
+  .main-title {
+    font-size: 2.5rem;
+  }
   .header {
     border: 0;
+    padding: 0;
   }
   .header .icon:nth-last-child(2),
   .header .icon:last-child {
     display: none;
   }
-  .breadcrumb {
+  .grid-main {
+    height: auto;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto-fit repeat(6, minmax(auto-fit, auto));
+    grid-template-areas: "l-img" "title" "color" "size" "price" "ship" "links";
+    place-content: start center;
+  }
+  .breadcrumb,
+  .small-img-box,
+  .add-to-cart-box,
+  .share-and-fav-box {
     display: none;
+  }
+  .large-img-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 700px;
+  }
+  .large-img-box .large-img {
+    max-height: 1000px;
+    max-width: 675px;
+  }
+  .color-box {
+    height: 100%;
+  }
+  .size-box {
+    border-bottom: 1px solid #E6E6E6;
+    padding-top: 2%;
+    padding-bottom: 4%;
+  }
+  .link-box a {
+    margin: 1% 0;
   }
   footer .container {
     flex-direction: column;
+    display: flex;
+    justify-content: center;
+  }
+  footer .container .div-container {
+    padding: 2% 5%;
   }
 }/*# sourceMappingURL=style.css.map */
