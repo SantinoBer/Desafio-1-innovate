@@ -4,6 +4,13 @@
   font-family: "Poppins", sans-serif;
 }
 
+.reset-link {
+  display: block;
+  text-decoration: none;
+  color: #000000;
+  margin: 14px 0;
+}
+
 html {
   font-size: 10px;
 }
@@ -12,12 +19,6 @@ body {
   overflow-x: hidden;
   max-width: 3000px;
   margin: 0 auto;
-}
-
-p,
-a,
-input,
-div {
   font-size: 1.4rem;
 }
 
@@ -374,7 +375,7 @@ div {
 }
 .aside-cards-container .product-cards-container figure:hover {
   cursor: pointer;
-  animation: cardHoverAnimation 0.2s;
+  animation: cardHoverAnimation 0.4s;
 }
 
 @keyframes cardHoverAnimation {
@@ -434,10 +435,7 @@ div {
 }
 
 @media only screen and (max-width: 900px) {
-  p,
-  a,
-  input,
-  div {
+  body {
     font-size: 1.2rem;
   }
   .breadcrumb,

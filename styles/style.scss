@@ -16,6 +16,13 @@ $red: #a10000;
     font-family: "Poppins", sans-serif;
 }
 
+.reset-link{
+    display: block;
+    text-decoration: none;
+    color: $black;
+    margin: 14px 0;
+}
+
 html {
     font-size: 10px;
 }
@@ -24,12 +31,6 @@ body {
     overflow-x: hidden;
     max-width: 3000px;
     margin: 0 auto;
-}
-
-p,
-a,
-input,
-div {
     font-size: 1.4rem;
 }
 
@@ -404,7 +405,7 @@ div {
             }
             &:hover {
                 cursor: pointer;
-                animation: cardHoverAnimation 0.2s;
+                animation: cardHoverAnimation 0.4s;
             }
         }
     }
@@ -476,10 +477,7 @@ div {
 
 @media only screen and (max-width: 900px) {
     //estilos generales mobile
-    p,
-    a,
-    input,
-    div {
+    body{
         font-size: 1.2rem;
     }
 
