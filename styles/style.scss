@@ -93,7 +93,6 @@ div {
 //estilo de main
 .grid-main {
     display: grid;
-    height: 85vh;
     overflow-x: hidden;
     overflow-y: scroll;
     grid-template-columns: 1.3fr 0.1fr 1.4fr 1.4fr;
@@ -167,22 +166,29 @@ div {
 }
 
 .textil {
-    grid-column: 1;
-    grid-row: 2 / 6;
+    grid-column: 1 / 3;
+    grid-row: 1 / 6;
     position: relative;
     background-color: $white;
-    opacity: 1;
+    padding: 0 10%;
 
     transform: translate(-200%);
     transition: 1s transform;
 
+    .textil-header{
+        display: flex;
+        align-items: center;
+        height: 10rem;
+    }
+
     h3 {
+        flex-grow: 1;
         text-align: center;
-        margin-bottom: 7%;
+        margin: 0;
     }
 
     .text-content {
-        margin: 5% 0;
+        margin: 0 0 2rem 0;
     }
 
     ul {
@@ -199,15 +205,6 @@ div {
                 margin-right: 5%;
             }
         }
-    }
-
-    .close {
-        position: absolute;
-        top: 1.5%;
-        right: 1%;
-        font-size: 2rem;
-        text-decoration: none;
-        color: $black;
     }
 
     &:target {
@@ -271,19 +268,22 @@ div {
 
 .size-box {
     grid-area: size;
-    .size-container {
-        display: flex;
+    .size-container{
         max-width: 50%;
         margin-bottom: 10%;
-        justify-content: space-between;
-        a {
-            text-decoration: none;
-            color: $black;
-            padding: 0.1rem 0.75rem;
-            &:target {
-                border: 2px solid $black;
-                font-weight: bold;
-            }
+    }
+}
+
+.size-container {
+    display: flex;
+    justify-content: space-between;
+    a {
+        text-decoration: none;
+        color: $black;
+        padding: 0.1rem 0.75rem;
+        &:target {
+            border: 2px solid $black;
+            font-weight: bold;
         }
     }
 }
@@ -327,6 +327,56 @@ div {
     }
 }
 
+.size-table{
+    grid-column: 4;
+    grid-row: 1/6;
+    position: relative;
+    background-color: $white;
+
+    transform: translate(100%);
+    transition: 0.3s transform;
+
+    .size-table-header{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 10rem;
+        padding-right: 5%;
+        h2{
+            flex-grow: 1;
+            text-align: center;
+        }
+    }
+    
+    .size-container{
+        justify-content: start;
+        a{
+            margin: 0 3%;
+        }
+    }
+
+    .sizes-img-container{
+        display: flex;
+        justify-content: center;
+    }
+
+    .size-table-clothing-container{
+        display: flex;
+        justify-content: space-evenly;
+        overflow: scroll;
+        a{
+            flex: 1;
+            text-decoration: none;
+            text-align: center;
+            color: $black;
+        }
+    }
+
+    &:target{
+        transform: translate(0);
+    }
+}
+
 //estilo de product cards
 .aside-cards-container {
     max-width: 3000px;
@@ -354,9 +404,18 @@ div {
             }
             &:hover {
                 cursor: pointer;
-                filter: brightness(150%);
+                animation: cardHoverAnimation 0.2s;
             }
         }
+    }
+}
+
+@keyframes cardHoverAnimation{
+    40%{
+        filter: brightness(130%);
+    }
+    100%{
+        filter: brightness(100%);
     }
 }
 
@@ -491,20 +550,30 @@ div {
     }
 
     .textil {
-        position: absolute;
+        position: fixed;
         top: 0px;
         left: 0px;
+        right: 0px;
+        bottom: 0px;
         margin: 0;
         opacity: 0;
         transition: 0.5s opacity;
+        overflow-y: scroll;
+        padding: 0 5%;
+
+        .textil-header{
+            position: sticky;
+            top: 0px;
+            background-color: $white;
+        }
     
         h3 {
             font-weight: 2rem;
-            margin: 10% 0;
         }
     
         .text-content {
-            margin: 0 5%;
+            margin-right: 5%;
+            margin-left: 5%;
         }
     
         ul {
@@ -517,9 +586,37 @@ div {
             }
         }
     
-        .close {
-            top: 2%;
-            right: 3%;
+        &:target {
+            opacity: 1;
+            z-index: 1;
+        }
+    }
+
+    .size-table {
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        right: 0px;
+        bottom: 0px;
+        margin: 0;
+        opacity: 0;
+        transition: 0.5s opacity;
+        overflow-y: scroll;
+
+        .size-table-header{
+            position: sticky;
+            top: 0px;
+            background-color: $white;
+        }
+
+        .size-container{
+            justify-content: space-evenly;
+        }
+    
+        .size-table-clothing-container{
+            a{
+                margin: 0 2rem;
+            }
         }
     
         &:target {

@@ -79,7 +79,6 @@ div {
 
 .grid-main {
   display: grid;
-  height: 85vh;
   overflow-x: hidden;
   overflow-y: scroll;
   grid-template-columns: 1.3fr 0.1fr 1.4fr 1.4fr;
@@ -148,20 +147,26 @@ div {
 }
 
 .textil {
-  grid-column: 1;
-  grid-row: 2/6;
+  grid-column: 1/3;
+  grid-row: 1/6;
   position: relative;
   background-color: #ffffff;
-  opacity: 1;
+  padding: 0 10%;
   transform: translate(-200%);
   transition: 1s transform;
 }
+.textil .textil-header {
+  display: flex;
+  align-items: center;
+  height: 10rem;
+}
 .textil h3 {
+  flex-grow: 1;
   text-align: center;
-  margin-bottom: 7%;
+  margin: 0;
 }
 .textil .text-content {
-  margin: 5% 0;
+  margin: 0 0 2rem 0;
 }
 .textil ul {
   list-style: none;
@@ -177,14 +182,6 @@ div {
 .textil ul li .icon {
   max-height: 30px;
   margin-right: 5%;
-}
-.textil .close {
-  position: absolute;
-  top: 1.5%;
-  right: 1%;
-  font-size: 2rem;
-  text-decoration: none;
-  color: #000000;
 }
 .textil:target {
   transform: translate(0);
@@ -247,17 +244,20 @@ div {
   grid-area: size;
 }
 .size-box .size-container {
-  display: flex;
   max-width: 50%;
   margin-bottom: 10%;
+}
+
+.size-container {
+  display: flex;
   justify-content: space-between;
 }
-.size-box .size-container a {
+.size-container a {
   text-decoration: none;
   color: #000000;
   padding: 0.1rem 0.75rem;
 }
-.size-box .size-container a:target {
+.size-container a:target {
   border: 2px solid #000000;
   font-weight: bold;
 }
@@ -301,6 +301,50 @@ div {
   justify-content: space-evenly;
 }
 
+.size-table {
+  grid-column: 4;
+  grid-row: 1/6;
+  position: relative;
+  background-color: #ffffff;
+  transform: translate(100%);
+  transition: 0.3s transform;
+}
+.size-table .size-table-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10rem;
+  padding-right: 5%;
+}
+.size-table .size-table-header h2 {
+  flex-grow: 1;
+  text-align: center;
+}
+.size-table .size-container {
+  justify-content: start;
+}
+.size-table .size-container a {
+  margin: 0 3%;
+}
+.size-table .sizes-img-container {
+  display: flex;
+  justify-content: center;
+}
+.size-table .size-table-clothing-container {
+  display: flex;
+  justify-content: space-evenly;
+  overflow: scroll;
+}
+.size-table .size-table-clothing-container a {
+  flex: 1;
+  text-decoration: none;
+  text-align: center;
+  color: #000000;
+}
+.size-table:target {
+  transform: translate(0);
+}
+
 .aside-cards-container {
   max-width: 3000px;
 }
@@ -330,9 +374,17 @@ div {
 }
 .aside-cards-container .product-cards-container figure:hover {
   cursor: pointer;
-  filter: brightness(150%);
+  animation: cardHoverAnimation 0.2s;
 }
 
+@keyframes cardHoverAnimation {
+  40% {
+    filter: brightness(130%);
+  }
+  100% {
+    filter: brightness(100%);
+  }
+}
 .grid-footer {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -437,19 +489,28 @@ div {
     margin: 1% 0;
   }
   .textil {
-    position: absolute;
+    position: fixed;
     top: 0px;
     left: 0px;
+    right: 0px;
+    bottom: 0px;
     margin: 0;
     opacity: 0;
     transition: 0.5s opacity;
+    overflow-y: scroll;
+    padding: 0 5%;
+  }
+  .textil .textil-header {
+    position: sticky;
+    top: 0px;
+    background-color: #ffffff;
   }
   .textil h3 {
     font-weight: 2rem;
-    margin: 10% 0;
   }
   .textil .text-content {
-    margin: 0 5%;
+    margin-right: 5%;
+    margin-left: 5%;
   }
   .textil ul {
     padding: 0;
@@ -460,11 +521,33 @@ div {
   .textil ul li p {
     font-size: 1.5rem;
   }
-  .textil .close {
-    top: 2%;
-    right: 3%;
-  }
   .textil:target {
+    opacity: 1;
+    z-index: 1;
+  }
+  .size-table {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    margin: 0;
+    opacity: 0;
+    transition: 0.5s opacity;
+    overflow-y: scroll;
+  }
+  .size-table .size-table-header {
+    position: sticky;
+    top: 0px;
+    background-color: #ffffff;
+  }
+  .size-table .size-container {
+    justify-content: space-evenly;
+  }
+  .size-table .size-table-clothing-container a {
+    margin: 0 2rem;
+  }
+  .size-table:target {
     opacity: 1;
     z-index: 1;
   }
