@@ -63,6 +63,11 @@ body {
     color: $black;
 }
 
+.selected{
+    border: 2px solid $black;
+    font-weight: bold;
+}
+
 //estilo de header
 .header {
     display: flex;
@@ -241,7 +246,7 @@ body {
 .color-box {
     grid-area: color;
     height: 80%;
-    .switch {
+    .colors {
         display: flex;
         flex-direction: row;
         a {
@@ -259,9 +264,6 @@ body {
             }
             .red {
                 background-color: $red;
-            }
-            &:target {
-                border: 2px solid $black;
             }
         }
     }
@@ -282,10 +284,6 @@ body {
         text-decoration: none;
         color: $black;
         padding: 0.1rem 0.75rem;
-        &:target {
-            border: 2px solid $black;
-            font-weight: bold;
-        }
     }
 }
 

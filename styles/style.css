@@ -51,6 +51,11 @@ body {
   color: #000000;
 }
 
+.selected {
+  border: 2px solid #000000;
+  font-weight: bold;
+}
+
 .header {
   display: flex;
   justify-content: space-between;
@@ -216,29 +221,26 @@ body {
   grid-area: color;
   height: 80%;
 }
-.color-box .switch {
+.color-box .colors {
   display: flex;
   flex-direction: row;
 }
-.color-box .switch a {
+.color-box .colors a {
   padding: 3px;
   margin-right: 20px;
 }
-.color-box .switch a div {
+.color-box .colors a div {
   width: 25px;
   height: 25px;
 }
-.color-box .switch a .black {
+.color-box .colors a .black {
   background-color: #000000;
 }
-.color-box .switch a .yellow {
+.color-box .colors a .yellow {
   background-color: #9d7800;
 }
-.color-box .switch a .red {
+.color-box .colors a .red {
   background-color: #a10000;
-}
-.color-box .switch a:target {
-  border: 2px solid #000000;
 }
 
 .size-box {
@@ -257,10 +259,6 @@ body {
   text-decoration: none;
   color: #000000;
   padding: 0.1rem 0.75rem;
-}
-.size-container a:target {
-  border: 2px solid #000000;
-  font-weight: bold;
 }
 
 .add-to-cart-box {
