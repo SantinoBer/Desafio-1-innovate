@@ -1,4 +1,4 @@
-function addSelected(item){
+function addSelected(item) {
     item.addEventListener("click", () => {
         lastItem.classList.remove('selected')
         item.classList.add('selected')
@@ -21,7 +21,8 @@ fetch('./products.json')
     .then(response => response.json())
     .then(json => {
         json.products.splice(5)
-        return json})
+        return json
+    })
     .then(data => {
         //title text
         const title = document.querySelectorAll('.main-title')
@@ -38,8 +39,8 @@ fetch('./products.json')
 
         const images = data.products[0].images
 
-        images.forEach(function(item,index){
-            const newSrc = images[index].src
+        for (let i = 0; i < images.length; i++) {
+            const newSrc = images[i].src
             const sImg = document.createElement('img')
             const lImg = document.createElement('img')
             sImg.setAttribute('src', newSrc)
@@ -48,7 +49,11 @@ fetch('./products.json')
             lImg.setAttribute('src', newSrc)
             lImg.setAttribute('class', 'large-img')
             largeImages.append(lImg)
-        })
+        }
 
         //change colors
+    
+
+        //product cards
+
     })

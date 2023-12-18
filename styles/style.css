@@ -226,13 +226,13 @@ body {
   width: 25px;
   height: 25px;
 }
-.color-box .colors a .black {
+.color-box .colors .black {
   background-color: #000000;
 }
-.color-box .colors a .yellow {
+.color-box .colors .yellow {
   background-color: #9d7800;
 }
-.color-box .colors a .red {
+.color-box .colors .red {
   background-color: #a10000;
 }
 
