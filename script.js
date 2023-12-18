@@ -6,15 +6,9 @@ function addSelected(item) {
     })
 }
 
-//resalta color seleccionado
-const colorBtns = document.querySelectorAll('.colors-btn')
-
-//inicializa lastItem
-let lastItem = colorBtns[0]
-colorBtns.forEach(addSelected)
-
 //resalta talle seleccionado
 const sizeBtns = document.querySelectorAll('.size')
+let lastItem = sizeBtns[0]
 sizeBtns.forEach(addSelected)
 
 fetch('./products.json')
@@ -52,7 +46,21 @@ fetch('./products.json')
         }
 
         //change colors
-    
+        const newColors = data.products[0].options[0].values
+        const colors = document.querySelector('.colors')
+        for (let i = 0; i < newColors.length; i++) {
+            const newA = document.createElement('a')
+            const newDiv = document.createElement('div')
+            newA.setAttribute('class', 'colors-btn')
+            colors.append(newA)
+            newA.append(newDiv)
+            newDiv.setAttribute('class', '')
+            newDiv.style.backgroundColor = newColors[i]
+        }
+
+        //resalta color seleccionado
+        const colorBtns = document.querySelectorAll('.colors-btn')
+        colorBtns.forEach(addSelected)
 
         //product cards
 
