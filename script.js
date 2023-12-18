@@ -83,17 +83,17 @@ fetch('./products.json')
         for (let i = 1; i < data.products.length; i++) {
             const CardImg = data.products[i].image.src;
             const CardTitle = data.products[i].title;
-            const newFig = document.createElement('figure')
-            const newCardImg = document.createElement('img')
-            const newCardTitle = document.createElement('figcaption')
-            const newCardPrice = document.createElement('figcaption')
-            cardContainer.append(newFig)
-            newFig.append(newCardImg,newCardTitle,newCardPrice)
-            newCardImg.setAttribute('class', 'product-card-img')
-            newCardImg.setAttribute('src', CardImg)
-            newCardTitle.setAttribute('class', 'product-card-title')
+            const newFig = document.createElement('figure');
+            const newCardImg = document.createElement('img');
+            const newCardTitle = document.createElement('figcaption');
+            const newCardPrice = document.createElement('figcaption');
+            cardContainer.append(newFig);
+            newFig.append(newCardImg, newCardTitle, newCardPrice);
+            newCardImg.setAttribute('class', 'product-card-img');
+            newCardImg.setAttribute('src', CardImg);
+            newCardTitle.setAttribute('class', 'product-card-title');
             newCardTitle.textContent = CardTitle;
-            newCardPrice.innerHTML = '8990,00'
+            newCardPrice.innerHTML = '8990,00';
         }
 
     })
