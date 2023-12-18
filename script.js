@@ -1,3 +1,4 @@
+//resalta color seleccionado
 const colorBtns = document.querySelectorAll('.colors-btn')
 
 let lastColor = colorBtns[0]

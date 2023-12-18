@@ -4,13 +4,6 @@
   font-family: "Poppins", sans-serif;
 }
 
-.reset-link {
-  display: block;
-  text-decoration: none;
-  color: #000000;
-  margin: 14px 0;
-}
-
 html {
   font-size: 10px;
 }
@@ -249,13 +242,10 @@ body {
 .size-box .size-container {
   max-width: 50%;
   margin-bottom: 10%;
-}
-
-.size-container {
   display: flex;
   justify-content: space-between;
 }
-.size-container a {
+.size-box .size-container a {
   text-decoration: none;
   color: #000000;
   padding: 0.1rem 0.75rem;
@@ -424,6 +414,12 @@ body {
 .grid-footer .footer-icon {
   padding-top: 13%;
   padding-right: 10%;
+}
+
+.footer-link {
+  display: block;
+  font-weight: normal;
+  margin: 14px 0;
 }
 
 .copyright {

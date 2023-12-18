@@ -16,13 +16,6 @@ $red: #a10000;
     font-family: "Poppins", sans-serif;
 }
 
-.reset-link{
-    display: block;
-    text-decoration: none;
-    color: $black;
-    margin: 14px 0;
-}
-
 html {
     font-size: 10px;
 }
@@ -274,16 +267,13 @@ body {
     .size-container{
         max-width: 50%;
         margin-bottom: 10%;
-    }
-}
-
-.size-container {
-    display: flex;
-    justify-content: space-between;
-    a {
-        text-decoration: none;
-        color: $black;
-        padding: 0.1rem 0.75rem;
+        display: flex;
+        justify-content: space-between;
+        a {
+            text-decoration: none;
+            color: $black;
+            padding: 0.1rem 0.75rem;
+        }
     }
 }
 
@@ -465,6 +455,12 @@ body {
         padding-top: 13%;
         padding-right: 10%;
     }
+}
+
+.footer-link{
+    display: block;
+    font-weight: normal;
+    margin: 14px 0;
 }
 
 .copyright {
