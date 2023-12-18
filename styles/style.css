@@ -236,7 +236,8 @@ body {
   display: flex;
   justify-content: space-between;
 }
-.size-box .size-container a {
+.size-box .size-container .size {
+  cursor: pointer;
   text-decoration: none;
   color: #000000;
   padding: 0.1rem 0.75rem;

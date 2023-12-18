@@ -1,14 +1,3 @@
-//resalta talle seleccionado
-const sizeBtns = document.querySelectorAll('.size')
-let lastSize = sizeBtns[0]
-sizeBtns.forEach(size => {
-    size.addEventListener("click", () => {
-        lastSize.classList.remove('selected')
-        size.classList.add('selected')
-        lastSize = size
-    })
-})
-
 fetch('./products.json')
     .then(response => response.json())
     .then(json => {
@@ -59,11 +48,32 @@ fetch('./products.json')
         //resalta color seleccionado
         const colorBtns = document.querySelectorAll('.colors-btn')
         let lastColor = colorBtns[0]
-        colorBtns.forEach(color =>{
+        colorBtns.forEach(color => {
             color.addEventListener("click", () => {
                 lastColor.classList.remove('selected')
                 color.classList.add('selected')
                 lastColor = color
+            })
+        })
+
+        //change sizes
+        const sizeContainer = document.querySelector('.size-container');
+        const newSizes = data.products[0].options[1].values
+        for (let i = 0; i < newSizes.length; i++) {
+            const newA = document.createElement('a');
+            newA.setAttribute('class', 'size');
+            sizeContainer.append(newA);
+            newA.textContent = newSizes[i]
+        }
+
+        //resalta talle seleccionado
+        const sizeBtns = document.querySelectorAll('.size');
+        let lastSize = sizeBtns[0]
+        sizeBtns.forEach(size => {
+            size.addEventListener("click", () => {
+                lastSize.classList.remove('selected')
+                size.classList.add('selected')
+                lastSize = size
             })
         })
 

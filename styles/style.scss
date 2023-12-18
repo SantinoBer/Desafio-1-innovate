@@ -260,7 +260,8 @@ body {
         margin-bottom: 10%;
         display: flex;
         justify-content: space-between;
-        a {
+        .size {
+            cursor: pointer;
             text-decoration: none;
             color: $black;
             padding: 0.1rem 0.75rem;
