@@ -1,14 +1,21 @@
+function addSelected(item){
+    item.addEventListener("click", () => {
+        lastItem.classList.remove('selected')
+        item.classList.add('selected')
+        lastItem = item
+    })
+}
+
 //resalta color seleccionado
 const colorBtns = document.querySelectorAll('.colors-btn')
 
-let lastColor = colorBtns[0]
-colorBtns.forEach(colorBtn => {
-    colorBtn.addEventListener("click", () => {
-        lastColor.classList.remove('selected')
-        colorBtn.classList.add('selected')
-        lastColor = colorBtn
-    })
-})
+//inicializa lastItem
+let lastItem = colorBtns[0]
+colorBtns.forEach(addSelected)
+
+//resalta talle seleccionado
+const sizeBtns = document.querySelectorAll('.size')
+sizeBtns.forEach(addSelected)
 
 fetch('./products.json')
     .then(response => response.json())
