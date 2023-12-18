@@ -192,9 +192,9 @@
                     "name": "Color",
                     "position": 1,
                     "values": [
-                        "blanco",
-                        "azul francia",
-                        "negro"
+                        "white",
+                        "blue",
+                        "black"
                     ]
                 },
                 {
