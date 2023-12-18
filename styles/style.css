@@ -226,15 +226,6 @@ body {
   width: 25px;
   height: 25px;
 }
-.color-box .colors .black {
-  background-color: #000000;
-}
-.color-box .colors .yellow {
-  background-color: #9d7800;
-}
-.color-box .colors .red {
-  background-color: #a10000;
-}
 
 .size-box {
   grid-area: size;

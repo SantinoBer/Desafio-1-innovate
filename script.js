@@ -1,15 +1,13 @@
-function addSelected(item) {
-    item.addEventListener("click", () => {
-        lastItem.classList.remove('selected')
-        item.classList.add('selected')
-        lastItem = item
-    })
-}
-
 //resalta talle seleccionado
 const sizeBtns = document.querySelectorAll('.size')
-let lastItem = sizeBtns[0]
-sizeBtns.forEach(addSelected)
+let lastSize = sizeBtns[0]
+sizeBtns.forEach(size => {
+    size.addEventListener("click", () => {
+        lastSize.classList.remove('selected')
+        size.classList.add('selected')
+        lastSize = size
+    })
+})
 
 fetch('./products.json')
     .then(response => response.json())
@@ -60,7 +58,14 @@ fetch('./products.json')
 
         //resalta color seleccionado
         const colorBtns = document.querySelectorAll('.colors-btn')
-        colorBtns.forEach(addSelected)
+        let lastColor = colorBtns[0]
+        colorBtns.forEach(color =>{
+            color.addEventListener("click", () => {
+                lastColor.classList.remove('selected')
+                color.classList.add('selected')
+                lastColor = color
+            })
+        })
 
         //product cards
 
