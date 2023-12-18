@@ -373,13 +373,14 @@ body {
         figure {
             margin: 0 auto;
             padding: 0 0.25rem;
-            img {
+            .product-card-img {
                 height: 48vw;
                 max-height: 700px;
+                max-width: 450px;
                 width: auto;
                 margin-bottom: 10px;
             }
-            figcaption {
+            .product-card-title {
                 margin: 10px 0;
                 font-weight: bold;
             }
