@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded',async ()=>{
     addSizes()
     addProductCards()
     manageSelected()
+    //checkStock()
 })
 
 //get information from json
@@ -25,7 +26,7 @@ async function getProducts(){
 //add title text
 async function addTitleText(){
     const title = document.querySelectorAll('.main-title')
-    title.forEach((title) => title.innerText = state.data.products[0].title)
+    title.forEach(title => title.innerText = state.data.products[0].title)
 }
 
 //add body text
@@ -81,6 +82,27 @@ async function addSizes(){
     }
 }
 
+//add product cards
+async function addProductCards(){
+    const cardContainer = document.querySelector('.product-cards-container')
+
+    for (let i = 1; i < state.data.products.length; i++) {
+        const CardImg = state.data.products[i].image.src;
+        const CardTitle = state.data.products[i].title;
+        const newFig = document.createElement('figure');
+        const newCardImg = document.createElement('img');
+        const newCardTitle = document.createElement('figcaption');
+        const newCardPrice = document.createElement('figcaption');
+        cardContainer.append(newFig);
+        newFig.append(newCardImg, newCardTitle, newCardPrice);
+        newCardImg.setAttribute('class', 'product-card-img');
+        newCardImg.setAttribute('src', CardImg);
+        newCardTitle.setAttribute('class', 'product-card-title');
+        newCardTitle.textContent = CardTitle;
+        newCardPrice.innerText = '8990,00';
+    }
+}
+
 //manage "selected" class
 async function manageSelected(){
     //resalta color seleccionado
@@ -107,23 +129,7 @@ async function manageSelected(){
     })
 }
 
-//add product cards
-async function addProductCards(){
-    const cardContainer = document.querySelector('.product-cards-container')
-
-    for (let i = 1; i < state.data.products.length; i++) {
-        const CardImg = state.data.products[i].image.src;
-        const CardTitle = state.data.products[i].title;
-        const newFig = document.createElement('figure');
-        const newCardImg = document.createElement('img');
-        const newCardTitle = document.createElement('figcaption');
-        const newCardPrice = document.createElement('figcaption');
-        cardContainer.append(newFig);
-        newFig.append(newCardImg, newCardTitle, newCardPrice);
-        newCardImg.setAttribute('class', 'product-card-img');
-        newCardImg.setAttribute('src', CardImg);
-        newCardTitle.setAttribute('class', 'product-card-title');
-        newCardTitle.textContent = CardTitle;
-        newCardPrice.innerHTML = '8990,00';
-    }
-}
+//check if selected variant is in stock
+//async function checkStock(){
+    
+//}
