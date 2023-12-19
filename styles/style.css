@@ -218,11 +218,11 @@ body {
   display: flex;
   flex-direction: row;
 }
-.color-box .colors a {
+.color-box .colors .colors-btn {
   padding: 3px;
   margin-right: 20px;
 }
-.color-box .colors a div {
+.color-box .colors .colors-btn div {
   width: 25px;
   height: 25px;
 }

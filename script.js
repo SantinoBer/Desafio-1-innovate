@@ -1,6 +1,6 @@
 const state = {}
 
-document.addEventListener('DOMContentLoaded',async ()=>{
+document.addEventListener('DOMContentLoaded', async () => {
     await getProducts()
     addTitleText()
     addBodyText()
@@ -9,35 +9,35 @@ document.addEventListener('DOMContentLoaded',async ()=>{
     addSizes()
     addProductCards()
     manageSelected()
-    //checkStock()
+    checkStock()
 })
 
 //get information from json
-async function getProducts(){
-    try{
+async function getProducts() {
+    try {
         let response = await fetch('./products.json')
         state.data = await response.json()
         state.data.products.splice(5)
-    }catch(error){
+    } catch (error) {
         console.error(error)
     }
 }
 
 //add title text
-async function addTitleText(){
+async function addTitleText() {
     const title = document.querySelectorAll('.main-title')
     title.forEach(title => title.innerText = state.data.products[0].title)
 }
 
 //add body text
-async function addBodyText(){        
+async function addBodyText() {
     const body = document.getElementById('bodyText');
     const newBodyText = state.data.products[0].body_html;
     body.innerHTML = newBodyText;
 }
 
 //add images
-async function addImages(){
+async function addImages() {
     const smallImages = document.querySelector('.small-img-box');
     const largeImages = document.querySelector('.large-img-box');
     const images = state.data.products[0].images;
@@ -56,7 +56,7 @@ async function addImages(){
 }
 
 //add colors
-async function addColors(){
+async function addColors() {
     const newColors = state.data.products[0].options[0].values
     const colors = document.querySelector('.colors')
     for (let i = 0; i < newColors.length; i++) {
@@ -65,13 +65,12 @@ async function addColors(){
         newA.setAttribute('class', 'colors-btn');
         colors.append(newA);
         newA.append(newDiv);
-        newDiv.setAttribute('class', '');
         newDiv.style.backgroundColor = newColors[i];
     }
 }
 
 //add sizes
-async function addSizes(){
+async function addSizes() {
     const sizeContainer = document.querySelector('.size-container');
     const newSizes = state.data.products[0].options[1].values;
     for (let i = 0; i < newSizes.length; i++) {
@@ -83,7 +82,7 @@ async function addSizes(){
 }
 
 //add product cards
-async function addProductCards(){
+async function addProductCards() {
     const cardContainer = document.querySelector('.product-cards-container')
 
     for (let i = 1; i < state.data.products.length; i++) {
@@ -104,7 +103,7 @@ async function addProductCards(){
 }
 
 //manage "selected" class
-async function manageSelected(){
+async function manageSelected() {
     //resalta color seleccionado
     const colorBtns = document.querySelectorAll('.colors-btn');
     let lastColor = colorBtns[0];
@@ -130,6 +129,30 @@ async function manageSelected(){
 }
 
 //check if selected variant is in stock
-//async function checkStock(){
-    
-//}
+async function checkStock() {
+    const cartBtn = document.getElementById('cartBtn')
+    const variants = state.data.products[0].variants
+    cartBtn.addEventListener('click', () => {
+        const selectedColor = document.querySelector('.colors-btn.selected div')
+        const selectedSize = document.querySelector('.size.selected')
+        if (selectedColor === null || selectedSize === null) {
+            alert('Seleccione un color y talle antes de agregar')
+        }
+        else {
+            let i = 0;
+            while ( i < variants.length) {
+                const option1 = variants[i].option1;
+                const option2 = variants[i].option2;
+                if (selectedColor.style.backgroundColor === option1 && selectedSize.innerText === option2) {
+                    if (variants[i].inventory_quantity > 0) {
+                        alert('Agregado al carrito')
+                    }
+                    else {
+                        alert('No hay stock')
+                    }
+                }
+                i++
+            }
+        }
+    })
+}

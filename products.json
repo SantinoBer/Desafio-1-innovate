@@ -39,7 +39,7 @@
                     "weight": 0.05,
                     "weight_unit": "kg",
                     "inventory_item_id": 33806036303985,
-                    "inventory_quantity": 0,
+                    "inventory_quantity": 2,
                     "old_inventory_quantity": 0,
                     "requires_shipping": true,
                     "admin_graphql_api_id": "gid:\/\/shopify\/ProductVariant\/32267827282033"
@@ -83,7 +83,7 @@
                     "compare_at_price": "0.00",
                     "fulfillment_service": "manual",
                     "inventory_management": "shopify",
-                    "option1": "azul francia",
+                    "option1": "blue",
                     "option2": "008",
                     "option3": null,
                     "created_at": "2021-01-04T15:08:47-03:00",
@@ -95,7 +95,7 @@
                     "weight": 0.05,
                     "weight_unit": "kg",
                     "inventory_item_id": 33806036369521,
-                    "inventory_quantity": 0,
+                    "inventory_quantity": 2,
                     "old_inventory_quantity": 0,
                     "requires_shipping": true,
                     "admin_graphql_api_id": "gid:\/\/shopify\/ProductVariant\/32267827347569"
@@ -151,7 +151,7 @@
                     "weight": 0.05,
                     "weight_unit": "kg",
                     "inventory_item_id": 33806036435057,
-                    "inventory_quantity": 0,
+                    "inventory_quantity": 3,
                     "old_inventory_quantity": 0,
                     "requires_shipping": true,
                     "admin_graphql_api_id": "gid:\/\/shopify\/ProductVariant\/32267827413105"
