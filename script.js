@@ -1,4 +1,4 @@
-const state = {}
+let state = {}
 
 document.addEventListener('DOMContentLoaded', async () => {
     await getProducts()
@@ -17,12 +17,15 @@ async function getProducts() {
     try {
         let response = await fetch('./products.json')
         state.data = await response.json()
-        state.data.products.splice(5)
+        state. data.products = state.data.products.slice(getRandomBetween(0,40), 48)
     } catch (error) {
         console.error(error)
     }
 }
 
+function getRandomBetween(min, max) {
+    return Math.random() * (max - min) + min;
+  }
 //add title text
 async function addTitleText() {
     const title = document.querySelectorAll('.main-title')
@@ -71,14 +74,19 @@ async function addColors() {
 
 //add sizes
 async function addSizes() {
+    let newSizes = []
     const sizeContainer = document.querySelector('.size-container');
-    const newSizes = state.data.products[0].options[1].values;
+    try{
+        newSizes = state.data.products[0].options[1].values;
+    }catch{
+        newSizes = ['001','002','003']
+    }
     for (let i = 0; i < newSizes.length; i++) {
         const newA = document.createElement('a');
         newA.setAttribute('class', 'size');
         sizeContainer.append(newA);
         newA.textContent = newSizes[i];
-    }
+    } 
 }
 
 //add product cards

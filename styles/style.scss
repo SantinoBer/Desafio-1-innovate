@@ -9,6 +9,7 @@ $lightest-gray: #e6e6e6;
 $white: #ffffff;
 $yellow: #9d7800;
 $red: #a10000;
+$colors: red, orange, yellow, green, blue, purple;
 
 //estilos generales
 * {
@@ -220,6 +221,7 @@ body {
 
 .small-img-box {
     grid-area: s-img;
+    overflow-y: scroll;
     .small-img {
         width: 100%;
         padding-top: 2px;
@@ -239,6 +241,7 @@ body {
     .large-img {
         height: 48vw;
         width: 100%;
+        max-width: 600px;
     }
 }
 
@@ -248,12 +251,15 @@ body {
     .colors {
         display: flex;
         flex-direction: row;
+        flex-wrap: wrap;
+        max-width: 90%;
         .colors-btn {
             padding: 3px;
             margin-right: 20px;
             div {
                 width: 25px;
                 height: 25px;
+                background: $lighter-gray;
             }
         }
     }
@@ -262,10 +268,10 @@ body {
 .size-box {
     grid-area: size;
     .size-container{
-        max-width: 50%;
         margin-bottom: 10%;
         display: flex;
         justify-content: space-between;
+        flex-wrap: wrap;
         .size {
             cursor: pointer;
             text-decoration: none;
