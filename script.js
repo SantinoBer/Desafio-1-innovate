@@ -76,6 +76,7 @@ async function addColors() {
 async function addSizes() {
     let newSizes = []
     const sizeContainer = document.querySelector('.size-container');
+    //agregado ya que algunos productos no tienen talles
     try{
         newSizes = state.data.products[0].options[1].values;
     }catch{

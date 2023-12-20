@@ -222,6 +222,7 @@ body {
 .small-img-box {
     grid-area: s-img;
     overflow-y: scroll;
+    max-height: 60vh;
     .small-img {
         width: 100%;
         padding-top: 2px;
