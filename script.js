@@ -127,7 +127,8 @@ async function manageSelected() {
 
 function toggleSelected(array,lastItem){
     array.forEach(item => {
-        item.addEventListener("click", () => {
+        item.addEventListener("click", (event) => {
+            event.preventDefault();
             lastItem.classList.remove('selected');
             item.classList.add('selected');
             lastItem = item;
@@ -168,7 +169,7 @@ function changeBtn() {
     cartBtn.textContent = '';
 }
 
-//open the size table
+//abre la tabla de talles
 const body = document.body
 const sizeTable = document.getElementById('sizeTable')
 function openSizeTable() {
@@ -189,12 +190,34 @@ function openSizeTable() {
 }
 openSizeTable();
 
-
+//abre la tabla de textil
+const textil = document.getElementById('textil')
+function openTextil(){
+    const textilBtn = document.getElementById('textilBtn')
+    const closeBtn = document.getElementById('closeTextil')
+    textilBtn.addEventListener('click', () => {
+        textil.classList.add('open-textil')
+        if (screen.width < 900) {
+            body.classList.add('no-scroll')
+        }
+        
+    })
+    closeBtn.addEventListener('click', () => {
+        textil.classList.remove('open-textil')
+        if (screen.width < 900) {
+            body.classList.remove('no-scroll')
+        }
+    })
+}
+openTextil()
 
 window.addEventListener('resize', () => {
     if (screen.width < 900) {
         changeBtn();
         if (sizeTable.className.includes('open-size-table')){
+            body.classList.add('no-scroll')
+        }
+        if (textil.className.includes('open-textil')){
             body.classList.add('no-scroll')
         }
     }

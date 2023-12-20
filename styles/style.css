@@ -109,6 +109,9 @@ body {
 .title-and-inf-box .main-title {
   font-size: 2rem;
 }
+.title-and-inf-box .link {
+  font-weight: bold;
+}
 
 .price-and-payment-box {
   grid-area: price;
@@ -186,9 +189,9 @@ body {
   max-height: 30px;
   margin-right: 5%;
 }
-.textil:target {
+
+.open-textil {
   transform: translate(0);
-  z-index: 1;
 }
 
 .small-img-box {
@@ -540,7 +543,7 @@ body {
   .textil ul li p {
     font-size: 1.5rem;
   }
-  .textil:target {
+  .open-textil {
     opacity: 1;
     z-index: 1;
   }
