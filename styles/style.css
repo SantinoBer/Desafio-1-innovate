@@ -43,7 +43,6 @@ body {
 }
 
 .link {
-  font-weight: bold;
   text-decoration: none;
   color: #000000;
 }
@@ -144,9 +143,10 @@ body {
 .link-box {
   grid-area: links;
 }
-.link-box a {
-  margin: 7% 0;
+.link-box .link {
+  font-weight: bold;
   display: block;
+  margin: 7% 0;
 }
 
 .textil {
@@ -246,6 +246,9 @@ body {
   color: #000000;
   padding: 0.1rem 0.75rem;
 }
+.size-box .link {
+  font-weight: bold;
+}
 
 .add-to-cart-box {
   grid-area: add;
@@ -305,12 +308,22 @@ body {
   flex-grow: 1;
   text-align: center;
 }
+.size-table .size-table-header .link {
+  font-weight: bold;
+}
 .size-table .size-container {
+  display: flex;
   justify-content: start;
+  padding-bottom: 0;
 }
 .size-table .size-container .link {
   margin: 0 3%;
-  font-weight: normal;
+}
+.size-table .selected {
+  border: 0;
+  font-weight: bold;
+  padding: 0 5px;
+  border-bottom: 3px solid black;
 }
 .size-table .sizes-img-container {
   display: flex;
@@ -326,6 +339,9 @@ body {
   text-decoration: none;
   text-align: center;
   color: #000000;
+}
+.size-table .size-table-clothing-container .selected {
+  padding: 0;
 }
 
 .open-size-table {
@@ -417,7 +433,6 @@ body {
 
 .footer-link {
   display: block;
-  font-weight: normal;
   margin: 14px 0;
 }
 
@@ -488,7 +503,8 @@ body {
     padding-top: 2%;
     padding-bottom: 4%;
   }
-  .link-box a {
+  .link-box .link {
+    font-weight: bold;
     margin: 1% 0;
   }
   .textil {

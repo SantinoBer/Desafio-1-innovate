@@ -55,7 +55,6 @@ body {
 }
 
 .link {
-    font-weight: bold;
     text-decoration: none;
     color: $black;
 }
@@ -162,9 +161,10 @@ body {
 
 .link-box {
     grid-area: links;
-    a {
-        margin: 7% 0;
+    .link {
+        font-weight: bold;
         display: block;
+        margin: 7% 0;
     }
 }
 
@@ -271,6 +271,9 @@ body {
             padding: 0.1rem 0.75rem;
         }
     }
+    .link{
+        font-weight: bold;
+    }
 }
 
 .add-to-cart-box {
@@ -330,14 +333,25 @@ body {
             flex-grow: 1;
             text-align: center;
         }
+        .link{
+            font-weight: bold;
+        }
     }
     
     .size-container{
+        display: flex;
         justify-content: start;
+        padding-bottom: 0;
         .link{
             margin: 0 3%;
-            font-weight: normal;
         }
+    }
+
+    .selected{
+        border: 0;
+        font-weight: bold;
+        padding: 0 5px;
+        border-bottom: 3px solid black;
     }
 
     .sizes-img-container{
@@ -354,6 +368,9 @@ body {
             text-decoration: none;
             text-align: center;
             color: $black;
+        }
+        .selected{
+            padding: 0;
         }
     }
 }
@@ -456,7 +473,6 @@ body {
 
 .footer-link{
     display: block;
-    font-weight: normal;
     margin: 14px 0;
 }
 
@@ -548,7 +564,8 @@ body {
     }
 
     .link-box {
-        a {
+        .link{
+            font-weight: bold;
             margin: 1% 0;
         }
     }
@@ -615,7 +632,6 @@ body {
 
         .size-container{
             justify-content: space-evenly;
-            
         }
     
         .size-table-clothing-container{

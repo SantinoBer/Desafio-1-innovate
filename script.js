@@ -126,6 +126,28 @@ async function manageSelected() {
             lastSize = size;
         })
     })
+
+    //resalta talle en tabla de talles
+    const sizeTable = document.querySelectorAll('.size-container .link')
+    let lastSizeTable = sizeTable[0]
+    sizeTable.forEach(size => {
+        size.addEventListener("click", () => {
+            lastSizeTable.classList.remove('selected');
+            size.classList.add('selected');
+            lastSizeTable = size;
+        })
+    })
+
+    //resalta prenda en la tabla de talles
+    const sizeTableClothes = document.querySelectorAll('.size-table-clothing-container a')
+    let lastClothePiece = sizeTableClothes[0]
+    sizeTableClothes.forEach(clothPiece => {
+        clothPiece.addEventListener("click", () => {
+            lastClothePiece.classList.remove('selected');
+            clothPiece.classList.add('selected');
+            lastClothePiece = clothPiece;
+        })
+    })
 }
 
 //check if selected variant is in stock
@@ -163,9 +185,9 @@ function changeBtn() {
 
 //open the size table
 const body = document.body
+const sizeTable = document.getElementById('sizeTable')
 function openSizeTable() {
     const sizeTableBtn = document.getElementById('sizeTableBtn')
-    const sizeTable = document.getElementById('sizeTable')
     const closeBtn = document.getElementById('closeSizeTable')
     sizeTableBtn.addEventListener('click', () => {
         sizeTable.classList.add('open-size-table')
@@ -180,13 +202,19 @@ function openSizeTable() {
         }
     })
 }
+openSizeTable();
+
+
 
 window.addEventListener('resize', () => {
     if (screen.width < 900) {
         changeBtn();
+        if (sizeTable.className.includes('open-size-table')){
+            body.classList.add('no-scroll')
+        }
     }
     else {
         cartBtn.textContent = 'AGREGAR AL CARRITO';
+        body.classList.remove('no-scroll');
     }
 })
-openSizeTable()
