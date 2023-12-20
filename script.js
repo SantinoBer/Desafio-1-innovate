@@ -139,7 +139,7 @@ async function checkStock() {
             alert('Seleccione un color y talle antes de agregar')
         }
         else {
-            for (let i= 0; i < variants.length; i++) {
+            for (let i = 0; i < variants.length; i++) {
                 const option1 = variants[i].option1;
                 const option2 = variants[i].option2;
                 if (selectedColor.style.backgroundColor === option1 && selectedSize.innerText === option2) {
@@ -157,28 +157,36 @@ async function checkStock() {
 }
 
 //change btn content for mobile
-function changeBtn(){
+function changeBtn() {
     cartBtn.textContent = '';
 }
-window.addEventListener('resize', () => {
-    if (screen.width < 900){
-        changeBtn();
-    }
-    else{
-        cartBtn.textContent = 'AGREGAR AL CARRITO';
-    }
-})
 
-function openSizeTable(){
+//open the size table
+const body = document.body
+function openSizeTable() {
     const sizeTableBtn = document.getElementById('sizeTableBtn')
     const sizeTable = document.getElementById('sizeTable')
     const closeBtn = document.getElementById('closeSizeTable')
     sizeTableBtn.addEventListener('click', () => {
-        sizeTable.style.transform = 'translate(0)' 
+        sizeTable.classList.add('open-size-table')
+        if (screen.width < 900) {
+            body.classList.add('no-scroll')
+        }
     })
     closeBtn.addEventListener('click', () => {
-        sizeTable.style.transform = 'translate(100%)' 
+        sizeTable.classList.remove('open-size-table')
+        if (screen.width < 900) {
+            body.classList.remove('no-scroll')
+        }
     })
 }
 
+window.addEventListener('resize', () => {
+    if (screen.width < 900) {
+        changeBtn();
+    }
+    else {
+        cartBtn.textContent = 'AGREGAR AL CARRITO';
+    }
+})
 openSizeTable()

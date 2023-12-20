@@ -15,6 +15,10 @@ body {
   font-size: 1.4rem;
 }
 
+.no-scroll {
+  overflow: hidden;
+}
+
 .mar-sides-10 {
   margin: 0 10%;
 }
@@ -286,8 +290,8 @@ body {
   grid-column: 4;
   grid-row: 1/6;
   position: relative;
-  background-color: #ffffff;
   transform: translate(100%);
+  background-color: #ffffff;
   transition: 0.3s transform;
 }
 .size-table .size-table-header {
@@ -322,6 +326,10 @@ body {
   text-decoration: none;
   text-align: center;
   color: #000000;
+}
+
+.open-size-table {
+  transform: translate(0);
 }
 
 .aside-cards-container {
@@ -542,7 +550,7 @@ body {
   .size-table .size-table-clothing-container a {
     margin: 0 2rem;
   }
-  .size-table:target {
+  .open-size-table {
     opacity: 1;
     z-index: 1;
   }
