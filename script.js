@@ -220,6 +220,10 @@ function openTextil(){
 }
 openTextil()
 
+if (screen.width<900) {
+    changeBtn()
+}
+
 window.addEventListener('resize', () => {
     if (screen.width < 900) {
         changeBtn();
