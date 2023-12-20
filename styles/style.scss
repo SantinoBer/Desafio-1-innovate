@@ -470,10 +470,25 @@ body {
 
     .breadcrumb,
     .small-img-box,
-    .add-to-cart-box,
     .share-and-fav-box,
     .contact-box-2 {
         display: none;
+    }
+
+
+    .add-to-cart-box{
+        position: fixed;
+        right: 2%;
+        bottom: 2%;
+        margin: 0;
+        .add-to-cart-btn{
+            width: 55px;
+            height: 55px;
+            background: #ffffff center no-repeat;
+            background-image: url("../assets/boton\ de\ comprar.svg");
+            background-size: contain;
+        }
+        
     }
 
     //estilo header mobile

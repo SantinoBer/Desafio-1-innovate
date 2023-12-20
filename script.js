@@ -129,8 +129,8 @@ async function manageSelected() {
 }
 
 //check if selected variant is in stock
+const cartBtn = document.getElementById('cartBtn')
 async function checkStock() {
-    const cartBtn = document.getElementById('cartBtn')
     const variants = state.data.products[0].variants
     cartBtn.addEventListener('click', () => {
         const selectedColor = document.querySelector('.colors-btn.selected div')
@@ -139,20 +139,32 @@ async function checkStock() {
             alert('Seleccione un color y talle antes de agregar')
         }
         else {
-            let i = 0;
-            while ( i < variants.length) {
+            for (let i= 0; i < variants.length; i++) {
                 const option1 = variants[i].option1;
                 const option2 = variants[i].option2;
                 if (selectedColor.style.backgroundColor === option1 && selectedSize.innerText === option2) {
                     if (variants[i].inventory_quantity > 0) {
-                        alert('Agregado al carrito')
+                        return alert('Agregado al carrito')
                     }
                     else {
-                        alert('No hay stock')
+                        return alert('No hay stock')
                     }
                 }
-                i++
             }
+            return alert('La combinacion no existe')
         }
     })
 }
+
+//change btn content for mobile
+function changeBtn(){
+    cartBtn.textContent = ''
+}
+window.addEventListener('resize', () => {
+    if (screen.width < 900){
+        changeBtn()
+    }
+    else{
+        cartBtn.textContent = 'AGREGAR AL CARRITO'
+    }
+})
