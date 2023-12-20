@@ -107,47 +107,32 @@ async function manageSelected() {
     //resalta color seleccionado
     const colorBtns = document.querySelectorAll('.colors-btn');
     let lastColor = colorBtns[0];
-    colorBtns.forEach(color => {
-        color.addEventListener("click", () => {
-            lastColor.classList.remove('selected');
-            color.classList.add('selected');
-            lastColor = color;
-        })
-    })
-
+    toggleSelected(colorBtns,lastColor);
 
     //resalta talle seleccionado
     const sizeBtns = document.querySelectorAll('.size');
     let lastSize = sizeBtns[0];
-    sizeBtns.forEach(size => {
-        size.addEventListener("click", () => {
-            lastSize.classList.remove('selected');
-            size.classList.add('selected');
-            lastSize = size;
-        })
-    })
+    toggleSelected(sizeBtns,lastSize);
 
     //resalta talle en tabla de talles
     const sizeTable = document.querySelectorAll('.size-container .link')
     let lastSizeTable = sizeTable[0]
-    sizeTable.forEach(size => {
-        size.addEventListener("click", () => {
-            lastSizeTable.classList.remove('selected');
-            size.classList.add('selected');
-            lastSizeTable = size;
-        })
-    })
+    toggleSelected(sizeTable,lastSizeTable)
 
     //resalta prenda en la tabla de talles
     const sizeTableClothes = document.querySelectorAll('.size-table-clothing-container a')
     let lastClothePiece = sizeTableClothes[0]
-    sizeTableClothes.forEach(clothPiece => {
-        clothPiece.addEventListener("click", () => {
-            lastClothePiece.classList.remove('selected');
-            clothPiece.classList.add('selected');
-            lastClothePiece = clothPiece;
+    toggleSelected(sizeTableClothes,lastClothePiece)
+}
+
+function toggleSelected(array,lastItem){
+    array.forEach(item => {
+        item.addEventListener("click", () => {
+            lastItem.classList.remove('selected');
+            item.classList.add('selected');
+            lastItem = item;
         })
-    })
+    }) 
 }
 
 //check if selected variant is in stock
