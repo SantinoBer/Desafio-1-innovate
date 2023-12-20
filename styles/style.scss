@@ -331,8 +331,9 @@ body {
     
     .size-container{
         justify-content: start;
-        a{
+        .link{
             margin: 0 3%;
+            font-weight: normal;
         }
     }
 
@@ -351,10 +352,6 @@ body {
             text-align: center;
             color: $black;
         }
-    }
-
-    &:target{
-        transform: translate(0);
     }
 }
 
@@ -611,6 +608,7 @@ body {
 
         .size-container{
             justify-content: space-evenly;
+            
         }
     
         .size-table-clothing-container{

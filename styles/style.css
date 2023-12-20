@@ -304,8 +304,9 @@ body {
 .size-table .size-container {
   justify-content: start;
 }
-.size-table .size-container a {
+.size-table .size-container .link {
   margin: 0 3%;
+  font-weight: normal;
 }
 .size-table .sizes-img-container {
   display: flex;
@@ -321,9 +322,6 @@ body {
   text-decoration: none;
   text-align: center;
   color: #000000;
-}
-.size-table:target {
-  transform: translate(0);
 }
 
 .aside-cards-container {

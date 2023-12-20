@@ -158,13 +158,27 @@ async function checkStock() {
 
 //change btn content for mobile
 function changeBtn(){
-    cartBtn.textContent = ''
+    cartBtn.textContent = '';
 }
 window.addEventListener('resize', () => {
     if (screen.width < 900){
-        changeBtn()
+        changeBtn();
     }
     else{
-        cartBtn.textContent = 'AGREGAR AL CARRITO'
+        cartBtn.textContent = 'AGREGAR AL CARRITO';
     }
 })
+
+function openSizeTable(){
+    const sizeTableBtn = document.getElementById('sizeTableBtn')
+    const sizeTable = document.getElementById('sizeTable')
+    const closeBtn = document.getElementById('closeSizeTable')
+    sizeTableBtn.addEventListener('click', () => {
+        sizeTable.style.transform = 'translate(0)' 
+    })
+    closeBtn.addEventListener('click', () => {
+        sizeTable.style.transform = 'translate(100%)' 
+    })
+}
+
+openSizeTable()
