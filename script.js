@@ -35,7 +35,7 @@ function getRandomBetween(min, max) {
 //add title text
 async function addTitleText() {
     const title = document.querySelectorAll('.main-title');
-    title.forEach(title => title.innerText = state.data.products[0].title);
+    title.forEach(title => title.textContent = state.data.products[0].title);
 }
 
 //add body text
@@ -113,7 +113,7 @@ async function addProductCards() {
         newCardImg.setAttribute('src', CardImg);
         newCardTitle.setAttribute('class', 'product-card-title');
         newCardTitle.textContent = CardTitle;
-        newCardPrice.innerText = '8990,00';
+        newCardPrice.textContent = '8990,00';
     }
 }
 
@@ -165,7 +165,7 @@ async function checkStock() {
             for (let i = 0; i < variants.length; i++) {
                 const option1 = variants[i].option1;
                 const option2 = variants[i].option2;
-                if (selectedColor.style.backgroundColor === option1 && selectedSize.innerText === option2) {
+                if (selectedColor.style.backgroundColor === option1 && selectedSize.textContent === option2) {
                     if (variants[i].inventory_quantity > 0) {
                         return alert('Agregado al carrito');
                     }
