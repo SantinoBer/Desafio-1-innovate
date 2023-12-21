@@ -10,6 +10,8 @@ document.addEventListener('DOMContentLoaded', async () => {
     addProductCards()
     manageSelected()
     checkStock()
+    openTextil()
+    openSizeTable();
 })
 
 //get information from json
@@ -17,15 +19,17 @@ async function getProducts() {
     try {
         let response = await fetch('./products.json')
         state.data = await response.json()
-        state. data.products = state.data.products.slice(getRandomBetween(0,40), 48)
+        state.data.products = await state.data.products.slice(getRandomBetween(0, 40), 48)
     } catch (error) {
         console.error(error)
     }
 }
 
+//obtiene un numero ransom entre 2 valores
 function getRandomBetween(min, max) {
     return Math.random() * (max - min) + min;
-  }
+}
+
 //add title text
 async function addTitleText() {
     const title = document.querySelectorAll('.main-title')
@@ -77,17 +81,17 @@ async function addSizes() {
     let newSizes = []
     const sizeContainer = document.querySelector('.size-container');
     //agregado ya que algunos productos no tienen talles
-    try{
+    try {
         newSizes = state.data.products[0].options[1].values;
-    }catch{
-        newSizes = ['001','002','003']
+    } catch {
+        newSizes = ['001', '002', '003']
     }
     for (let i = 0; i < newSizes.length; i++) {
         const newA = document.createElement('a');
         newA.setAttribute('class', 'size');
         sizeContainer.append(newA);
         newA.textContent = newSizes[i];
-    } 
+    }
 }
 
 //add product cards
@@ -116,25 +120,25 @@ async function manageSelected() {
     //resalta color seleccionado
     const colorBtns = document.querySelectorAll('.colors-btn');
     let lastColor = colorBtns[0];
-    toggleSelected(colorBtns,lastColor);
+    toggleSelected(colorBtns, lastColor);
 
     //resalta talle seleccionado
     const sizeBtns = document.querySelectorAll('.size');
     let lastSize = sizeBtns[0];
-    toggleSelected(sizeBtns,lastSize);
+    toggleSelected(sizeBtns, lastSize);
 
     //resalta talle en tabla de talles
     const sizeTable = document.querySelectorAll('.size-container .link')
     let lastSizeTable = sizeTable[0]
-    toggleSelected(sizeTable,lastSizeTable)
+    toggleSelected(sizeTable, lastSizeTable)
 
     //resalta prenda en la tabla de talles
     const sizeTableClothes = document.querySelectorAll('.size-table-clothing-container a')
     let lastClothePiece = sizeTableClothes[0]
-    toggleSelected(sizeTableClothes,lastClothePiece)
+    toggleSelected(sizeTableClothes, lastClothePiece)
 }
 
-function toggleSelected(array,lastItem){
+function toggleSelected(array, lastItem) {
     array.forEach(item => {
         item.addEventListener("click", (event) => {
             event.preventDefault();
@@ -142,7 +146,7 @@ function toggleSelected(array,lastItem){
             item.classList.add('selected');
             lastItem = item;
         })
-    }) 
+    })
 }
 
 //check if selected variant is in stock
@@ -197,11 +201,10 @@ function openSizeTable() {
         }
     })
 }
-openSizeTable();
 
 //abre la tabla de textil
 const textil = document.getElementById('textil')
-function openTextil(){
+function openTextil() {
     const textilBtn = document.getElementById('textilBtn')
     const closeBtn = document.getElementById('closeTextil')
     textilBtn.addEventListener('click', () => {
@@ -209,7 +212,7 @@ function openTextil(){
         if (screen.width < 900) {
             body.classList.add('no-scroll')
         }
-        
+
     })
     closeBtn.addEventListener('click', () => {
         textil.classList.remove('open-textil')
@@ -218,19 +221,15 @@ function openTextil(){
         }
     })
 }
-openTextil()
 
-if (screen.width<900) {
+if (screen.width < 900) {
     changeBtn()
 }
 
 window.addEventListener('resize', () => {
     if (screen.width < 900) {
         changeBtn();
-        if (sizeTable.className.includes('open-size-table')){
-            body.classList.add('no-scroll')
-        }
-        if (textil.className.includes('open-textil')){
+        if (sizeTable.className.includes('open-size-table') || textil.className.includes('open-textil')) {
             body.classList.add('no-scroll')
         }
     }
