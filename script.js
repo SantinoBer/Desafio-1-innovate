@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     manageSelected()
     checkStock()
     openTextil()
-    openSizeTable();
+    openSizeTable()
 })
 
 //get information from json
@@ -27,13 +27,15 @@ async function getProducts() {
 
 //obtiene un numero ransom entre 2 valores
 function getRandomBetween(min, max) {
-    return Math.random() * (max - min) + min;
+    let res = Math.random() * (max - min) + min;
+    res = Math.round(res);
+    return res;
 }
 
 //add title text
 async function addTitleText() {
-    const title = document.querySelectorAll('.main-title')
-    title.forEach(title => title.innerText = state.data.products[0].title)
+    const title = document.querySelectorAll('.main-title');
+    title.forEach(title => title.innerText = state.data.products[0].title);
 }
 
 //add body text
@@ -64,8 +66,8 @@ async function addImages() {
 
 //add colors
 async function addColors() {
-    const newColors = state.data.products[0].options[0].values
-    const colors = document.querySelector('.colors')
+    const newColors = state.data.products[0].options[0].values;
+    const colors = document.querySelector('.colors');
     for (let i = 0; i < newColors.length; i++) {
         const newA = document.createElement('a');
         const newDiv = document.createElement('div');
@@ -96,7 +98,7 @@ async function addSizes() {
 
 //add product cards
 async function addProductCards() {
-    const cardContainer = document.querySelector('.product-cards-container')
+    const cardContainer = document.querySelector('.product-cards-container');
 
     for (let i = 1; i < state.data.products.length; i++) {
         const CardImg = state.data.products[i].image.src;
@@ -128,12 +130,12 @@ async function manageSelected() {
     toggleSelected(sizeBtns, lastSize);
 
     //resalta talle en tabla de talles
-    const sizeTable = document.querySelectorAll('.size-container .link')
-    let lastSizeTable = sizeTable[0]
-    toggleSelected(sizeTable, lastSizeTable)
+    const sizeTable = document.querySelectorAll('.size-container .link');
+    let lastSizeTable = sizeTable[0];
+    toggleSelected(sizeTable, lastSizeTable);
 
     //resalta prenda en la tabla de talles
-    const sizeTableClothes = document.querySelectorAll('.size-table-clothing-container a')
+    const sizeTableClothes = document.querySelectorAll('.size-table-clothing-container a');
     let lastClothePiece = sizeTableClothes[0]
     toggleSelected(sizeTableClothes, lastClothePiece)
 }
@@ -150,14 +152,14 @@ function toggleSelected(array, lastItem) {
 }
 
 //check if selected variant is in stock
-const cartBtn = document.getElementById('cartBtn')
+const cartBtn = document.getElementById('cartBtn');
 async function checkStock() {
     const variants = state.data.products[0].variants
     cartBtn.addEventListener('click', () => {
-        const selectedColor = document.querySelector('.colors-btn.selected div')
-        const selectedSize = document.querySelector('.size.selected')
+        const selectedColor = document.querySelector('.colors-btn.selected div');
+        const selectedSize = document.querySelector('.size.selected');
         if (selectedColor === null || selectedSize === null) {
-            alert('Seleccione un color y talle antes de agregar')
+            alert('Seleccione un color y talle antes de agregar');
         }
         else {
             for (let i = 0; i < variants.length; i++) {
@@ -165,14 +167,14 @@ async function checkStock() {
                 const option2 = variants[i].option2;
                 if (selectedColor.style.backgroundColor === option1 && selectedSize.innerText === option2) {
                     if (variants[i].inventory_quantity > 0) {
-                        return alert('Agregado al carrito')
+                        return alert('Agregado al carrito');
                     }
                     else {
-                        return alert('No hay stock')
+                        return alert('No hay stock');
                     }
                 }
             }
-            return alert('La combinacion no existe')
+            return alert('La combinacion no existe');
         }
     })
 }
@@ -183,54 +185,54 @@ function changeBtn() {
 }
 
 //abre la tabla de talles
-const body = document.body
-const sizeTable = document.getElementById('sizeTable')
+const body = document.body;
+const sizeTable = document.getElementById('sizeTable');
 function openSizeTable() {
-    const sizeTableBtn = document.getElementById('sizeTableBtn')
-    const closeBtn = document.getElementById('closeSizeTable')
+    const sizeTableBtn = document.getElementById('sizeTableBtn');
+    const closeBtn = document.getElementById('closeSizeTable');
     sizeTableBtn.addEventListener('click', () => {
-        sizeTable.classList.add('open-size-table')
+        sizeTable.classList.add('open-size-table');
         if (screen.width < 900) {
-            body.classList.add('no-scroll')
+            body.classList.add('no-scroll');
         }
     })
     closeBtn.addEventListener('click', () => {
-        sizeTable.classList.remove('open-size-table')
+        sizeTable.classList.remove('open-size-table');
         if (screen.width < 900) {
-            body.classList.remove('no-scroll')
+            body.classList.remove('no-scroll');
         }
     })
 }
 
 //abre la tabla de textil
-const textil = document.getElementById('textil')
+const textil = document.getElementById('textil');
 function openTextil() {
-    const textilBtn = document.getElementById('textilBtn')
-    const closeBtn = document.getElementById('closeTextil')
+    const textilBtn = document.getElementById('textilBtn');
+    const closeBtn = document.getElementById('closeTextil');
     textilBtn.addEventListener('click', () => {
-        textil.classList.add('open-textil')
+        textil.classList.add('open-textil');
         if (screen.width < 900) {
-            body.classList.add('no-scroll')
+            body.classList.add('no-scroll');
         }
 
     })
     closeBtn.addEventListener('click', () => {
-        textil.classList.remove('open-textil')
+        textil.classList.remove('open-textil');
         if (screen.width < 900) {
-            body.classList.remove('no-scroll')
+            body.classList.remove('no-scroll');
         }
     })
 }
 
 if (screen.width < 900) {
-    changeBtn()
+    changeBtn();
 }
 
 window.addEventListener('resize', () => {
     if (screen.width < 900) {
         changeBtn();
         if (sizeTable.className.includes('open-size-table') || textil.className.includes('open-textil')) {
-            body.classList.add('no-scroll')
+            body.classList.add('no-scroll');
         }
     }
     else {
